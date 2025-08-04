@@ -1,0 +1,10 @@
+{
+  "Name": "Multiplayer Helper",
+  "Author": "Ka Pui Cheung",
+  "Version": "1.0.0",
+  "Description": "Automatically copies multiplayer invite codes to clipboard and pauses game when host joins",
+  "UniqueID": "KaPuiCheung.MultiplayerHelper",
+  "EntryDll": "MultiplayerHelper.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}

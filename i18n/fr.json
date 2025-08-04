@@ -1,0 +1,37 @@
+{
+  
+  "core.name": "Assistant Multijoueur",
+  "core.description": "Copie automatiquement les codes d'invitation multijoueur et met en pause le jeu quand l'hôte rejoint",
+  "core.loaded": "Mod MultiplayerHelper chargé avec une architecture modulaire !",
+  
+  "invite.hud-copied": "Code d'invitation copié dans le presse-papiers : {{code}}",
+  "invite.hud-manual": "Code d'invitation (copier manuellement) : {{code}}",
+  
+  "invite.log-detecting": "Serveur détecté ! Tentative d'obtenir le code d'invitation...",
+  "invite.log-found": "Code d'invitation trouvé via la méthode getInviteCode : {{code}}",
+  "invite.log-copied": "Code d'invitation copié dans le presse-papiers : {{code}}",
+  "invite.log-unavailable": "Code d'invitation pas encore disponible",
+  
+  "invite.error-clipboard": "Erreur lors de la copie dans le presse-papiers : {{error}}",
+  "invite.error-detection": "Erreur lors de l'obtention du code d'invitation : {{error}}",
+  
+  "pause.hud-paused-direct": "Jeu en pause - Appuyez sur P pour reprendre",
+  "pause.hud-resumed": "Jeu repris",
+  "pause.hud-paused-manual": "Jeu en pause",
+  
+  "pause.log-auto-direct": "Jeu auto-pausé avec la méthode de pause directe (appuyez sur P pour reprendre)",
+  "pause.log-auto-chatbox": "Commande /pause envoyée via la chatbox",
+  "pause.log-manual-resumed": "Jeu repris en appuyant sur P",
+  "pause.log-manual-paused": "Jeu mis en pause en appuyant sur P",
+  "pause.log-already-paused": "Le jeu est déjà en pause",
+  "pause.log-player-connected": "Joueur {{playerName}} connecté au jeu",
+  
+  "pause.error-failed": "Erreur lors de la mise en pause automatique du jeu : {{error}}",
+  "pause.error-chatbox-unavailable": "Chatbox pas encore disponible",
+  
+  "debug.invite-manager-init": "InviteCodeManager initialisé",
+  "debug.pause-manager-init": "AutoPauseManager initialisé (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper : Jeu lancé, configuration des composants...",
+  "debug.save-loaded-invite": "Sauvegarde chargée. Flag de session hébergée réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Sauvegarde chargée. Flag de pause automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

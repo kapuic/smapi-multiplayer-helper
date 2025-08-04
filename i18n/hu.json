@@ -1,0 +1,36 @@
+{
+  "core.name": "Többjátékos Segéd",
+  "core.description": "Automatikusan másolja a többjátékos meghívókódokat és szünetelteti a játékot, amikor a gazda csatlakozik",
+  "core.loaded": "MultiplayerHelper mod betöltve moduláris architektúrával!",
+  
+  "invite.hud-copied": "Meghívókód vágólapra másolva: {{code}}",
+  "invite.hud-manual": "Meghívókód (kézzel másolja): {{code}}",
+  
+  "invite.log-detecting": "Szerver észlelve! Meghívókód lekérése...",
+  "invite.log-found": "Meghívókód megtalálva getInviteCode metódussal: {{code}}",
+  "invite.log-copied": "Meghívókód vágólapra másolva: {{code}}",
+  "invite.log-unavailable": "Meghívókód még nem elérhető",
+  
+  "invite.error-clipboard": "Hiba a vágólapra másoláskor: {{error}}",
+  "invite.error-detection": "Hiba a meghívókód lekérésekor: {{error}}",
+  
+  "pause.hud-paused-direct": "Játék szüneteltetve - Nyomja meg a P-t a folytatáshoz",
+  "pause.hud-resumed": "Játék folytatva",
+  "pause.hud-paused-manual": "Játék szüneteltetve",
+  
+  "pause.log-auto-direct": "Játék automatikusan szüneteltetve közvetlen szünet módszerrel (nyomja meg a P-t a folytatáshoz)",
+  "pause.log-auto-chatbox": "/pause parancs elküldve chatboxon keresztül",
+  "pause.log-manual-resumed": "Játék folytatva P megnyomásával",
+  "pause.log-manual-paused": "Játék szüneteltetve P megnyomásával",
+  "pause.log-already-paused": "A játék már szüneteltetve van",
+  "pause.log-player-connected": "{{playerName}} játékos csatlakozott a játékhoz",
+  
+  "pause.error-failed": "Hiba a játék automatikus szüneteltetésekor: {{error}}",
+  "pause.error-chatbox-unavailable": "Chatbox még nem elérhető",
+  
+  "debug.invite-manager-init": "InviteCodeManager inicializálva",
+  "debug.pause-manager-init": "AutoPauseManager inicializálva (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: Játék elindítva, komponensek konfigurálása...",
+  "debug.save-loaded-invite": "Mentés betöltve. Gazda munkamenet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Mentés betöltve. Automatikus szünet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

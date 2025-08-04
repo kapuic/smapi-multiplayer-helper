@@ -1,0 +1,36 @@
+{
+  "core.name": "Çok Oyunculu Yardımcısı",
+  "core.description": "Çok oyunculu davet kodlarını otomatik olarak kopyalar ve ana bilgisayar katıldığında oyunu duraklatır",
+  "core.loaded": "MultiplayerHelper modu modüler mimari ile yüklendi!",
+  
+  "invite.hud-copied": "Davet kodu panoya kopyalandı: {{code}}",
+  "invite.hud-manual": "Davet kodu (manuel kopyala): {{code}}",
+  
+  "invite.log-detecting": "Sunucu tespit edildi! Davet kodu alınmaya çalışılıyor...",
+  "invite.log-found": "getInviteCode metodu ile davet kodu bulundu: {{code}}",
+  "invite.log-copied": "Davet kodu panoya kopyalandı: {{code}}",
+  "invite.log-unavailable": "Davet kodu henüz mevcut değil",
+  
+  "invite.error-clipboard": "Panoya kopyalarken hata: {{error}}",
+  "invite.error-detection": "Davet kodu alırken hata: {{error}}",
+  
+  "pause.hud-paused-direct": "Oyun duraklatıldı - Devam etmek için P'ye basın",
+  "pause.hud-resumed": "Oyun devam ettirildi",
+  "pause.hud-paused-manual": "Oyun duraklatıldı",
+  
+  "pause.log-auto-direct": "Doğrudan duraklat yöntemi ile oyun otomatik durakladı (devam etmek için P'ye basın)",
+  "pause.log-auto-chatbox": "Sohbet kutusu aracılığıyla /pause komutu gönderildi",
+  "pause.log-manual-resumed": "P'ye basarak oyun devam ettirildi",
+  "pause.log-manual-paused": "P'ye basarak oyun duraklatıldı",
+  "pause.log-already-paused": "Oyun zaten duraklatılmış",
+  "pause.log-player-connected": "{{playerName}} oyuncusu oyuna bağlandı",
+  
+  "pause.error-failed": "Oyunu otomatik duraklatırken hata: {{error}}",
+  "pause.error-chatbox-unavailable": "Sohbet kutusu henüz mevcut değil",
+  
+  "debug.invite-manager-init": "InviteCodeManager başlatıldı",
+  "debug.pause-manager-init": "AutoPauseManager başlatıldı (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: Oyun başlatıldı, bileşenler yapılandırılıyor...",
+  "debug.save-loaded-invite": "Kayıt yüklendi. Ana bilgisayar oturum bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Kayıt yüklendi. Otomatik duraklat bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

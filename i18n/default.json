@@ -1,0 +1,37 @@
+{
+  
+  "core.name": "Multiplayer Helper",
+  "core.description": "Automatically copies multiplayer invite codes and pauses game when host joins",
+  "core.loaded": "MultiplayerHelper mod loaded with modular architecture!",
+  
+  "invite.hud-copied": "Invite code copied to clipboard: {{code}}",
+  "invite.hud-manual": "Invite code (copy manually): {{code}}",
+  
+  "invite.log-detecting": "Server detected! Attempting to get invite code...",
+  "invite.log-found": "Found invite code via getInviteCode method: {{code}}",
+  "invite.log-copied": "Copied invite code to clipboard: {{code}}",
+  "invite.log-unavailable": "No invite code available yet",
+  
+  "invite.error-clipboard": "Error copying to clipboard: {{error}}",
+  "invite.error-detection": "Error getting invite code: {{error}}",
+  
+  "pause.hud-paused-direct": "Game paused - Press P to resume",
+  "pause.hud-resumed": "Game resumed",
+  "pause.hud-paused-manual": "Game paused",
+  
+  "pause.log-auto-direct": "Auto-paused game using direct pause method (press P to resume)",
+  "pause.log-auto-chatbox": "Sent /pause command via chatbox",
+  "pause.log-manual-resumed": "Game resumed by pressing P",
+  "pause.log-manual-paused": "Game paused by pressing P",
+  "pause.log-already-paused": "Game is already paused",
+  "pause.log-player-connected": "Player {{playerName}} connected to the game",
+  
+  "pause.error-failed": "Error auto-pausing game: {{error}}",
+  "pause.error-chatbox-unavailable": "Chatbox not available yet",
+  
+  "debug.invite-manager-init": "InviteCodeManager initialized",
+  "debug.pause-manager-init": "AutoPauseManager initialized (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: Game launched, configuring components...",
+  "debug.save-loaded-invite": "Save loaded. Reset hosted session flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Save loaded. Reset auto-pause flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

@@ -1,0 +1,36 @@
+{
+  "core.name": "多人游戏助手",
+  "core.description": "自动复制多人游戏邀请码，并在主机加入时暂停游戏",
+  "core.loaded": "MultiplayerHelper模组已加载，采用模块化架构！",
+  
+  "invite.hud-copied": "邀请码已复制到剪贴板：{{code}}",
+  "invite.hud-manual": "邀请码（手动复制）：{{code}}",
+  
+  "invite.log-detecting": "检测到服务器！正在尝试获取邀请码...",
+  "invite.log-found": "通过getInviteCode方法找到邀请码：{{code}}",
+  "invite.log-copied": "邀请码已复制到剪贴板：{{code}}",
+  "invite.log-unavailable": "邀请码暂不可用",
+  
+  "invite.error-clipboard": "复制到剪贴板时出错：{{error}}",
+  "invite.error-detection": "获取邀请码时出错：{{error}}",
+  
+  "pause.hud-paused-direct": "游戏已暂停 - 按P键继续",
+  "pause.hud-resumed": "游戏已恢复",
+  "pause.hud-paused-manual": "游戏已暂停",
+  
+  "pause.log-auto-direct": "使用直接暂停方法自动暂停游戏（按P键继续）",
+  "pause.log-auto-chatbox": "通过聊天框发送/pause命令",
+  "pause.log-manual-resumed": "按P键恢复游戏",
+  "pause.log-manual-paused": "按P键暂停游戏",
+  "pause.log-already-paused": "游戏已处于暂停状态",
+  "pause.log-player-connected": "玩家{{playerName}}已连接到游戏",
+  
+  "pause.error-failed": "自动暂停游戏时出错：{{error}}",
+  "pause.error-chatbox-unavailable": "聊天框暂不可用",
+  
+  "debug.invite-manager-init": "InviteCodeManager已初始化",
+  "debug.pause-manager-init": "AutoPauseManager已初始化（useDirectPause：{{useDirectPause}}）",
+  "debug.game-launched": "MultiplayerHelper：游戏已启动，正在配置组件...",
+  "debug.save-loaded-invite": "存档已加载。重置主机会话标志。IsMainPlayer：{{isMainPlayer}}，IsMultiplayer：{{isMultiplayer}}",
+  "debug.save-loaded-pause": "存档已加载。重置自动暂停标志。IsMainPlayer：{{isMainPlayer}}，IsMultiplayer：{{isMultiplayer}}"
+}

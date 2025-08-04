@@ -1,0 +1,21 @@
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+.vs/
+
+# macOS
+.DS_Store
+
+# Rider
+.idea/
+
+# VS Code (commit project settings, ignore personal settings)
+.vscode/settings.json.user
+
+# Local configuration
+stardewvalley.targets

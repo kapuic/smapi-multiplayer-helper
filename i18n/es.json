@@ -1,0 +1,37 @@
+{
+  
+  "core.name": "Ayudante Multijugador",
+  "core.description": "Copia automáticamente códigos de invitación multijugador y pausa el juego cuando se une el anfitrión",
+  "core.loaded": "¡Mod MultiplayerHelper cargado con arquitectura modular!",
+  
+  "invite.hud-copied": "Código de invitación copiado al portapapeles: {{code}}",
+  "invite.hud-manual": "Código de invitación (copiar manualmente): {{code}}",
+  
+  "invite.log-detecting": "¡Servidor detectado! Intentando obtener código de invitación...",
+  "invite.log-found": "Código de invitación encontrado vía método getInviteCode: {{code}}",
+  "invite.log-copied": "Código de invitación copiado al portapapeles: {{code}}",
+  "invite.log-unavailable": "Código de invitación aún no disponible",
+  
+  "invite.error-clipboard": "Error copiando al portapapeles: {{error}}",
+  "invite.error-detection": "Error obteniendo código de invitación: {{error}}",
+  
+  "pause.hud-paused-direct": "Juego pausado - Presiona P para reanudar",
+  "pause.hud-resumed": "Juego reanudado",
+  "pause.hud-paused-manual": "Juego pausado",
+  
+  "pause.log-auto-direct": "Juego auto-pausado usando método de pausa directa (presiona P para reanudar)",
+  "pause.log-auto-chatbox": "Comando /pause enviado vía chatbox",
+  "pause.log-manual-resumed": "Juego reanudado presionando P",
+  "pause.log-manual-paused": "Juego pausado presionando P",
+  "pause.log-already-paused": "El juego ya está pausado",
+  "pause.log-player-connected": "Jugador {{playerName}} se conectó al juego",
+  
+  "pause.error-failed": "Error auto-pausando el juego: {{error}}",
+  "pause.error-chatbox-unavailable": "Chatbox aún no disponible",
+  
+  "debug.invite-manager-init": "InviteCodeManager inicializado",
+  "debug.pause-manager-init": "AutoPauseManager inicializado (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: Juego iniciado, configurando componentes...",
+  "debug.save-loaded-invite": "Partida cargada. Flag de sesión anfitriona reiniciado. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Partida cargada. Flag de auto-pausa reiniciado. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

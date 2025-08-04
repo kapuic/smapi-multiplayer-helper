@@ -1,0 +1,36 @@
+{
+  "core.name": "멀티플레이어 도우미",
+  "core.description": "멀티플레이어 초대 코드를 자동으로 복사하고 호스트가 참가할 때 게임을 일시정지합니다",
+  "core.loaded": "MultiplayerHelper 모드가 모듈식 아키텍처로 로드되었습니다!",
+  
+  "invite.hud-copied": "초대 코드가 클립보드에 복사됨: {{code}}",
+  "invite.hud-manual": "초대 코드 (수동 복사): {{code}}",
+  
+  "invite.log-detecting": "서버 감지됨! 초대 코드 획득 시도 중...",
+  "invite.log-found": "getInviteCode 메서드로 초대 코드 발견: {{code}}",
+  "invite.log-copied": "초대 코드가 클립보드에 복사됨: {{code}}",
+  "invite.log-unavailable": "초대 코드가 아직 사용할 수 없음",
+  
+  "invite.error-clipboard": "클립보드 복사 오류: {{error}}",
+  "invite.error-detection": "초대 코드 획득 오류: {{error}}",
+  
+  "pause.hud-paused-direct": "게임 일시정지됨 - P키로 재개",
+  "pause.hud-resumed": "게임 재개됨",
+  "pause.hud-paused-manual": "게임 일시정지됨",
+  
+  "pause.log-auto-direct": "직접 일시정지 방법으로 게임 자동 일시정지 (P키로 재개)",
+  "pause.log-auto-chatbox": "채팅박스를 통해 /pause 명령어 전송",
+  "pause.log-manual-resumed": "P키를 눌러 게임 재개",
+  "pause.log-manual-paused": "P키를 눌러 게임 일시정지",
+  "pause.log-already-paused": "게임이 이미 일시정지됨",
+  "pause.log-player-connected": "플레이어 {{playerName}}이(가) 게임에 연결됨",
+  
+  "pause.error-failed": "게임 자동 일시정지 오류: {{error}}",
+  "pause.error-chatbox-unavailable": "채팅박스가 아직 사용할 수 없음",
+  
+  "debug.invite-manager-init": "InviteCodeManager 초기화됨",
+  "debug.pause-manager-init": "AutoPauseManager 초기화됨 (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: 게임 시작됨, 구성 요소 설정 중...",
+  "debug.save-loaded-invite": "세이브 로드됨. 호스트 세션 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "세이브 로드됨. 자동 일시정지 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

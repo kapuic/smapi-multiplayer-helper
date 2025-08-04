@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Stardew Valley (Debug Mod)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "/Volumes/Gaming/SteamLibrary/steamapps/common/Stardew Valley/Contents/MacOS/StardewModdingAPI",
+      "args": [],
+      "cwd": "/Volumes/Gaming/SteamLibrary/steamapps/common/Stardew Valley/Contents/MacOS",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "preLaunchTask": "build"
+    }
+  ]
+}

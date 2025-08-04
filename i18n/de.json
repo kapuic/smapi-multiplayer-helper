@@ -1,0 +1,37 @@
+{
+  
+  "core.name": "Multiplayer-Helfer",
+  "core.description": "Kopiert automatisch Multiplayer-Einladungscodes und pausiert das Spiel, wenn der Host beitritt",
+  "core.loaded": "MultiplayerHelper-Mod mit modularer Architektur geladen!",
+  
+  "invite.hud-copied": "Einladungscode in Zwischenablage kopiert: {{code}}",
+  "invite.hud-manual": "Einladungscode (manuell kopieren): {{code}}",
+  
+  "invite.log-detecting": "Server erkannt! Versuche Einladungscode zu finden...",
+  "invite.log-found": "Einladungscode über getInviteCode-Methode gefunden: {{code}}",
+  "invite.log-copied": "Einladungscode in Zwischenablage kopiert: {{code}}",
+  "invite.log-unavailable": "Noch kein Einladungscode verfügbar",
+  
+  "invite.error-clipboard": "Fehler beim Kopieren in Zwischenablage: {{error}}",
+  "invite.error-detection": "Fehler beim Abrufen des Einladungscodes: {{error}}",
+  
+  "pause.hud-paused-direct": "Spiel pausiert - Drücke P zum Fortsetzen",
+  "pause.hud-resumed": "Spiel fortgesetzt",
+  "pause.hud-paused-manual": "Spiel pausiert",
+  
+  "pause.log-auto-direct": "Spiel automatisch pausiert mit direkter Pausenmethode (drücke P zum Fortsetzen)",
+  "pause.log-auto-chatbox": "/pause-Befehl über Chatbox gesendet",
+  "pause.log-manual-resumed": "Spiel durch Drücken von P fortgesetzt",
+  "pause.log-manual-paused": "Spiel durch Drücken von P pausiert",
+  "pause.log-already-paused": "Spiel ist bereits pausiert",
+  "pause.log-player-connected": "Spieler {{playerName}} hat sich mit dem Spiel verbunden",
+  
+  "pause.error-failed": "Fehler beim automatischen Pausieren des Spiels: {{error}}",
+  "pause.error-chatbox-unavailable": "Chatbox noch nicht verfügbar",
+  
+  "debug.invite-manager-init": "InviteCodeManager initialisiert",
+  "debug.pause-manager-init": "AutoPauseManager initialisiert (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: Spiel gestartet, konfiguriere Komponenten...",
+  "debug.save-loaded-invite": "Spielstand geladen. Hosted-Session-Flag zurückgesetzt. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Spielstand geladen. Auto-Pause-Flag zurückgesetzt. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

@@ -1,0 +1,36 @@
+{
+  "core.name": "Помощник Мультиплеера",
+  "core.description": "Автоматически копирует коды приглашения мультиплеера и ставит игру на паузу, когда присоединяется хост",
+  "core.loaded": "Мод MultiplayerHelper загружен с модульной архитектурой!",
+  
+  "invite.hud-copied": "Код приглашения скопирован в буфер обмена: {{code}}",
+  "invite.hud-manual": "Код приглашения (скопировать вручную): {{code}}",
+  
+  "invite.log-detecting": "Сервер обнаружен! Попытка получить код приглашения...",
+  "invite.log-found": "Код приглашения найден через метод getInviteCode: {{code}}",
+  "invite.log-copied": "Код приглашения скопирован в буфер обмена: {{code}}",
+  "invite.log-unavailable": "Код приглашения пока недоступен",
+  
+  "invite.error-clipboard": "Ошибка копирования в буфер обмена: {{error}}",
+  "invite.error-detection": "Ошибка получения кода приглашения: {{error}}",
+  
+  "pause.hud-paused-direct": "Игра приостановлена - Нажмите P для продолжения",
+  "pause.hud-resumed": "Игра возобновлена",
+  "pause.hud-paused-manual": "Игра приостановлена",
+  
+  "pause.log-auto-direct": "Игра автоматически приостановлена прямым методом (нажмите P для продолжения)",
+  "pause.log-auto-chatbox": "Команда /pause отправлена через чат",
+  "pause.log-manual-resumed": "Игра возобновлена нажатием P",
+  "pause.log-manual-paused": "Игра приостановлена нажатием P",
+  "pause.log-already-paused": "Игра уже приостановлена",
+  "pause.log-player-connected": "Игрок {{playerName}} присоединился к игре",
+  
+  "pause.error-failed": "Ошибка автоматической приостановки игры: {{error}}",
+  "pause.error-chatbox-unavailable": "Чат пока недоступен",
+  
+  "debug.invite-manager-init": "InviteCodeManager инициализирован",
+  "debug.pause-manager-init": "AutoPauseManager инициализирован (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: Игра запущена, настройка компонентов...",
+  "debug.save-loaded-invite": "Сохранение загружено. Флаг хостинг-сессии сброшен. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "Сохранение загружено. Флаг автопаузы сброшен. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

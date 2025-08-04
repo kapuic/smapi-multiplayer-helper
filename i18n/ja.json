@@ -1,0 +1,36 @@
+{
+  "core.name": "マルチプレイヤーヘルパー",
+  "core.description": "マルチプレイヤーの招待コードを自動的にコピーし、ホストが参加した時にゲームを一時停止します",
+  "core.loaded": "MultiplayerHelperモッドがモジュラーアーキテクチャで読み込まれました！",
+  
+  "invite.hud-copied": "招待コードをクリップボードにコピーしました: {{code}}",
+  "invite.hud-manual": "招待コード（手動でコピー）: {{code}}",
+  
+  "invite.log-detecting": "サーバーを検出しました！招待コードの取得を試行中...",
+  "invite.log-found": "getInviteCodeメソッドで招待コードを発見: {{code}}",
+  "invite.log-copied": "招待コードをクリップボードにコピーしました: {{code}}",
+  "invite.log-unavailable": "招待コードはまだ利用できません",
+  
+  "invite.error-clipboard": "クリップボードへのコピーエラー: {{error}}",
+  "invite.error-detection": "招待コード取得エラー: {{error}}",
+  
+  "pause.hud-paused-direct": "ゲーム一時停止 - Pキーで再開",
+  "pause.hud-resumed": "ゲーム再開",
+  "pause.hud-paused-manual": "ゲーム一時停止",
+  
+  "pause.log-auto-direct": "直接一時停止メソッドでゲームを自動一時停止（Pキーで再開）",
+  "pause.log-auto-chatbox": "チャットボックス経由で/pauseコマンドを送信",
+  "pause.log-manual-resumed": "Pキーを押してゲームを再開",
+  "pause.log-manual-paused": "Pキーを押してゲームを一時停止",
+  "pause.log-already-paused": "ゲームは既に一時停止中です",
+  "pause.log-player-connected": "プレイヤー {{playerName}} がゲームに接続しました",
+  
+  "pause.error-failed": "ゲームの自動一時停止エラー: {{error}}",
+  "pause.error-chatbox-unavailable": "チャットボックスはまだ利用できません",
+  
+  "debug.invite-manager-init": "InviteCodeManagerが初期化されました",
+  "debug.pause-manager-init": "AutoPauseManagerが初期化されました (useDirectPause: {{useDirectPause}})",
+  "debug.game-launched": "MultiplayerHelper: ゲーム開始、コンポーネントを設定中...",
+  "debug.save-loaded-invite": "セーブ読み込み完了。ホストセッションフラグをリセット。IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  "debug.save-loaded-pause": "セーブ読み込み完了。自動一時停止フラグをリセット。IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+}

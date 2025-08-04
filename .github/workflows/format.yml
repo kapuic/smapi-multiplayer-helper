@@ -1,0 +1,47 @@
+name: Auto Format
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        ref: ${{ github.head_ref }}
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '6.0.x'
+    
+    - name: Restore dependencies
+      run: dotnet restore MultiplayerHelper.sln
+    
+    - name: Format code
+      run: dotnet format MultiplayerHelper.sln
+    
+    - name: Check for changes
+      id: changes
+      run: |
+        if git diff --quiet; then
+          echo "formatted=false" >> $GITHUB_OUTPUT
+        else
+          echo "formatted=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit formatting changes
+      if: steps.changes.outputs.formatted == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Auto-format code with dotnet format"
+        git push
