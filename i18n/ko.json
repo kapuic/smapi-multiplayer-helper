@@ -1,7 +1,8 @@
 {
   "core.name": "멀티플레이어 도우미",
-  "core.description": "멀티플레이어 초대 코드를 자동으로 복사하고 호스트가 참가할 때 게임을 일시정지합니다",
+  "core.description": "초대 코드 자동 복사, 일시정지 단축키, 화이트리스트, 자동 설정",
   "core.loaded": "MultiplayerHelper 모드가 모듈식 아키텍처로 로드되었습니다!",
+  "core.disabled": "MultiplayerHelper 모드가 설정에서 비활성화되었습니다",
   
   "invite.hud-copied": "초대 코드가 클립보드에 복사됨: {{code}}",
   "invite.hud-manual": "초대 코드 (수동 복사): {{code}}",
@@ -32,5 +33,61 @@
   "debug.pause-manager-init": "AutoPauseManager 초기화됨 (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: 게임 시작됨, 구성 요소 설정 중...",
   "debug.save-loaded-invite": "세이브 로드됨. 호스트 세션 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  "debug.save-loaded-pause": "세이브 로드됨. 자동 일시정지 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+  "debug.save-loaded-pause": "세이브 로드됨. 자동 일시정지 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.general.header": "일반 설정",
+  "config.general.mod-enabled": "모드 활성화",
+  "config.general.mod-enabled.tooltip": "모드의 모든 기능을 활성화 또는 비활성화합니다.",
+  "config.general.log-level": "로그 레벨",
+  "config.general.log-level.tooltip": "로그에 기록할 정보의 양을 설정합니다.",
+  
+  "config.invite.header": "초대 코드 설정",
+  "config.invite.enabled": "초대 코드 자동 복사",
+  "config.invite.enabled.tooltip": "멀티플레이어 초대 코드를 자동으로 클립보드에 복사합니다.",
+  "config.invite.show-hud-notifications": "HUD 알림 표시",
+  "config.invite.show-hud-notifications.tooltip": "초대 코드가 복사될 때 알림을 표시합니다.",
+  "config.invite.show-manual-copy-message": "수동 복사 메시지 표시",
+  "config.invite.show-manual-copy-message.tooltip": "클립보드가 실패할 때 수동 복사 메시지를 표시합니다.",
+  
+  "config.pause.header": "일시정지 설정",
+  "config.pause.enabled": "호스팅 시 자동 일시정지",
+  "config.pause.enabled.tooltip": "멀티플레이어 세션을 호스팅할 때 자동으로 게임을 일시정지합니다.",
+  "config.pause.method": "일시정지 방법",
+  "config.pause.method.tooltip": "게임을 일시정지하는 방법을 선택합니다.",
+  "config.pause.method-direct": "직접 일시정지 (로지 전용)",
+  "config.pause.method-chatbox": "채팅 명령어 (멀티플레이어)",
+  "config.pause.enable-manual-toggle": "수동 토글 활성화",
+  "config.pause.enable-manual-toggle.tooltip": "설정 가능한 키로 수동 일시정지/재개를 허용합니다.",
+  "config.pause.toggle-key": "일시정지 토글 키",
+  "config.pause.toggle-key.tooltip": "게임을 수동으로 일시정지/재개하기 위한 키 조합입니다.",
+  
+  "config.configure.header": "자동 구성 설정",
+  "config.configure.enabled": "자동 구성 활성화",
+  "config.configure.enabled.tooltip": "멀티플레이어 호스팅 시 맵 설정을 자동으로 구성합니다.",
+  "config.configure.sleep-announce-mode": "수면 알림 모드",
+  "config.configure.sleep-announce-mode.tooltip": "멀티플레이어에서 수면 메시지가 표시되는 시점을 변경합니다.",
+  "config.configure.sleep-announce-mode-off": "끄기 (없음)",
+  "config.configure.sleep-announce-mode-first": "첫 번째 (매일 첫 번째만)",
+  "config.configure.sleep-announce-mode-all": "모두 (매번)",
+  "config.configure.move-building-permission": "건물 이동 권한",
+  "config.configure.move-building-permission.tooltip": "농장 일꾼이 건물을 이동할 수 있는지 변경합니다.",
+  "config.configure.move-building-permission-off": "끄기 (이동 불가)",
+  "config.configure.move-building-permission-owned": "소유 (자신의 건물만)",
+  "config.configure.move-building-permission-on": "켜기 (모든 건물)",
+  "config.configure.unban-all": "모든 플레이어 자동 밴 해제",
+  "config.configure.unban-all.tooltip": "맵 구성 시 모든 플레이어를 자동으로 밴 해제합니다.",
+  
+  "configure.log-attempting": "맵 설정 자동 구성을 시도 중...",
+  "configure.log-completed": "맵 자동 구성이 성공적으로 완료되었습니다",
+  "configure.log-command-executed": "명령어 실행됨: {{command}}",
+  "configure.error-failed": "맵 자동 구성 중 오류 발생: {{error}}",
+  "configure.error-chatbox-unavailable": "명령어 실행을 위한 채팅박스를 사용할 수 없습니다",
+  "configure.error-command-failed": "명령어 {{command}} {{parameter}} 실행 오류: {{error}}",
+  
+  "debug.configure-manager-init": "AutoConfigureManager가 초기화되었습니다",
+  "debug.save-loaded-configure": "세이브가 로드되었습니다. 자동 구성 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.about.header": "정보",
+  "config.about.repository": "소스 코드: github.com/kapuic/smapi-multiplayer-helper",
+  "config.about.copyright": "© 2025 Ka Pui Cheung. MIT 라이선스로 라이선스됩니다."
 }

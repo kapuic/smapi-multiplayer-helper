@@ -1,7 +1,8 @@
 {
   "core.name": "Többjátékos Segéd",
-  "core.description": "Automatikusan másolja a többjátékos meghívókódokat és szünetelteti a játékot, amikor a gazda csatlakozik",
+  "core.description": "Automatikus meghívókód másolás, szünet gyorsbillentyűk, whitelist és auto-konfiguráció",
   "core.loaded": "MultiplayerHelper mod betöltve moduláris architektúrával!",
+  "core.disabled": "A MultiplayerHelper mod le van tiltva a konfigurációban",
   
   "invite.hud-copied": "Meghívókód vágólapra másolva: {{code}}",
   "invite.hud-manual": "Meghívókód (kézzel másolja): {{code}}",
@@ -32,5 +33,61 @@
   "debug.pause-manager-init": "AutoPauseManager inicializálva (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Játék elindítva, komponensek konfigurálása...",
   "debug.save-loaded-invite": "Mentés betöltve. Gazda munkamenet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  "debug.save-loaded-pause": "Mentés betöltve. Automatikus szünet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+  "debug.save-loaded-pause": "Mentés betöltve. Automatikus szünet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.general.header": "Általános Beállítások",
+  "config.general.mod-enabled": "Mod Engedélyezése",
+  "config.general.mod-enabled.tooltip": "Az összes mod funkció engedélyezése vagy letiltása.",
+  "config.general.log-level": "Napló Szint",
+  "config.general.log-level.tooltip": "Meghatározza, mennyi információt rögzítsen a napló.",
+  
+  "config.invite.header": "Meghívókód Beállítások",
+  "config.invite.enabled": "Meghívókódok Automatikus Másolása",
+  "config.invite.enabled.tooltip": "Többjátékos meghívókódok automatikus másolása a vágólapra.",
+  "config.invite.show-hud-notifications": "HUD Értesítések Megjelenítése",
+  "config.invite.show-hud-notifications.tooltip": "Értesítés megjelenítése, amikor a meghívókód másolva lett.",
+  "config.invite.show-manual-copy-message": "Kézi Másolási Üzenetek Megjelenítése",
+  "config.invite.show-manual-copy-message.tooltip": "Kézi másolási üzenet megjelenítése, amikor a vágólap meghiúsul.",
+  
+  "config.pause.header": "Szünet Beállítások",
+  "config.pause.enabled": "Automatikus Szünet Hosztoláskor",
+  "config.pause.enabled.tooltip": "A játék automatikus szüneteltetése, amikor többjátékos munkamenetet kezd hosztolni.",
+  "config.pause.method": "Szünet Módszer",
+  "config.pause.method.tooltip": "Válassza ki, hogyan szüneteltesse a játékot.",
+  "config.pause.method-direct": "Közvetlen Szünet (Csak Helyi)",
+  "config.pause.method-chatbox": "Csevegő Parancs (Többjátékos)",
+  "config.pause.enable-manual-toggle": "Kézi Váltás Engedélyezése",
+  "config.pause.enable-manual-toggle.tooltip": "Kézi szünet/folytatás engedélyezése konfigurálható billentyűvel.",
+  "config.pause.toggle-key": "Szünet Váltó Billentyű",
+  "config.pause.toggle-key.tooltip": "Billentyű kombináció a játék kézi szüneteltetéséhez/folytatásához.",
+  
+  "config.configure.header": "Automatikus Konfiguráció Beállítások",
+  "config.configure.enabled": "Automatikus Konfiguráció Engedélyezése",
+  "config.configure.enabled.tooltip": "Térkép beállítások automatikus konfigurálása többjátékos hosztoláskor.",
+  "config.configure.sleep-announce-mode": "Alvás Bejelentés Mód",
+  "config.configure.sleep-announce-mode.tooltip": "Változtassa meg, mikor jelennek meg az alvás üzenetek többjátékosban.",
+  "config.configure.sleep-announce-mode-off": "Ki (Soha)",
+  "config.configure.sleep-announce-mode-first": "Első (Első Alkalommal Naponta)",
+  "config.configure.sleep-announce-mode-all": "Mind (Minden Alkalommal)",
+  "config.configure.move-building-permission": "Épület Mozgatási Engedély",
+  "config.configure.move-building-permission.tooltip": "Változtassa meg, hogy a farmkezelők mozgathatnak-e épületeket.",
+  "config.configure.move-building-permission-off": "Ki (Nincs Mozgatás)",
+  "config.configure.move-building-permission-owned": "Tulajdon (Csak Saját Épületek)",
+  "config.configure.move-building-permission-on": "Be (Összes Épület)",
+  "config.configure.unban-all": "Összes Játékos Automatikus Feloldása",
+  "config.configure.unban-all.tooltip": "Automatikusan feloldja az összes játékos tiltását a térkép konfigurálásakor.",
+  
+  "configure.log-attempting": "Térkép beállítások automatikus konfigurálásának kísérlete...",
+  "configure.log-completed": "Térkép automatikus konfigurálása sikeresen befejezve",
+  "configure.log-command-executed": "Parancs végrehajtva: {{command}}",
+  "configure.error-failed": "Hiba a térkép automatikus konfigurálása során: {{error}}",
+  "configure.error-chatbox-unavailable": "Chatbox nem elérhető a parancs végrehajtásához",
+  "configure.error-command-failed": "Hiba a {{command}} {{parameter}} parancs végrehajtásakor: {{error}}",
+  
+  "debug.configure-manager-init": "AutoConfigureManager inicializálva",
+  "debug.save-loaded-configure": "Mentés betöltve. Automatikus konfigurációs jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.about.header": "Névjegy",
+  "config.about.repository": "Forráskód: github.com/kapuic/smapi-multiplayer-helper",
+  "config.about.copyright": "© 2025 Ka Pui Cheung. MIT licenc alatt licencelésre került."
 }

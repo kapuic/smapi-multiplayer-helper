@@ -1,6 +1,6 @@
 {
   "core.name": "Çok Oyunculu Yardımcısı",
-  "core.description": "Çok oyunculu davet kodlarını otomatik olarak kopyalar ve ana bilgisayar katıldığında oyunu duraklatır",
+  "core.description": "Otomatik davet kodu kopyalama, duraklat kısayolları, whitelist ve otomatik yapılandırma",
   "core.loaded": "MultiplayerHelper modu modüler mimari ile yüklendi!",
   
   "invite.hud-copied": "Davet kodu panoya kopyalandı: {{code}}",
@@ -32,5 +32,61 @@
   "debug.pause-manager-init": "AutoPauseManager başlatıldı (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Oyun başlatıldı, bileşenler yapılandırılıyor...",
   "debug.save-loaded-invite": "Kayıt yüklendi. Ana bilgisayar oturum bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  "debug.save-loaded-pause": "Kayıt yüklendi. Otomatik duraklat bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+  "debug.save-loaded-pause": "Kayıt yüklendi. Otomatik duraklat bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.general.header": "Genel Ayarlar",
+  "config.general.mod-enabled": "Mod'u Etkinleştir",
+  "config.general.mod-enabled.tooltip": "Tüm mod işlevlerini etkinleştir veya devre dışı bırak.",
+  "config.general.log-level": "Günlük Seviyesi",
+  "config.general.log-level.tooltip": "Ne kadar bilgi günlüğe kaydedilecek.",
+  
+  "config.invite.header": "Davet Kodu Ayarları",
+  "config.invite.enabled": "Davet Kodlarını Otomatik Kopyala",
+  "config.invite.enabled.tooltip": "Çok oyunculu davet kodlarını panoya otomatik olarak kopyala.",
+  "config.invite.show-hud-notifications": "HUD Bildirimlerini Göster",
+  "config.invite.show-hud-notifications.tooltip": "Davet kodu kopyalandığında bildirim göster.",
+  "config.invite.show-manual-copy-message": "Manuel Kopyalama Mesajlarını Göster",
+  "config.invite.show-manual-copy-message.tooltip": "Pano başarısız olduğunda manuel kopyalama mesajı göster.",
+  
+  "config.pause.header": "Duraklat Ayarları",
+  "config.pause.enabled": "Hostlarken Otomatik Duraklat",
+  "config.pause.enabled.tooltip": "Çok oyunculu oturum host etmeye başladığınızda oyunu otomatik duraklat.",
+  "config.pause.method": "Duraklat Yöntemi",
+  "config.pause.method.tooltip": "Oyunu nasıl duraklatacağını seç.",
+  "config.pause.method-direct": "Doğrudan Duraklat (Sadece Yerel)",
+  "config.pause.method-chatbox": "Sohbet Komutu (Çok Oyunculu)",
+  "config.pause.enable-manual-toggle": "Manuel Değiştirmeyi Etkinleştir",
+  "config.pause.enable-manual-toggle.tooltip": "Yapılandırılabilir tuş ile manuel duraklat/devam ettirmeye izin ver.",
+  "config.pause.toggle-key": "Duraklat Değiştirme Tuşu",
+  "config.pause.toggle-key.tooltip": "Oyunu manuel olarak duraklatmak/devam ettirmek için tuş kombinasyonu.",
+  
+  "config.configure.header": "Otomatik Yapılandırma Ayarları",
+  "config.configure.enabled": "Otomatik Yapılandırmayı Etkinleştir",
+  "config.configure.enabled.tooltip": "Çok oyunculu oyun barındırırken harita ayarlarını otomatik olarak yapılandır.",
+  "config.configure.sleep-announce-mode": "Uyku Duyuru Modu",
+  "config.configure.sleep-announce-mode.tooltip": "Çok oyunculuda uyku mesajlarının ne zaman gösterileceğini değiştir.",
+  "config.configure.sleep-announce-mode-off": "Kapalı (Hiçbir Zaman)",
+  "config.configure.sleep-announce-mode-first": "İlk (Her Gün İlk Kez)",
+  "config.configure.sleep-announce-mode-all": "Hepsi (Her Seferinde)",
+  "config.configure.move-building-permission": "Bina Taşıma İzni",
+  "config.configure.move-building-permission.tooltip": "Çiftlik işçilerinin binaları taşıyıp taşıyamayacağını değiştir.",
+  "config.configure.move-building-permission-off": "Kapalı (Taşıma Yok)",
+  "config.configure.move-building-permission-owned": "Sahip Olunan (Sadece Kendi Binaları)",
+  "config.configure.move-building-permission-on": "Açık (Tüm Binalar)",
+  "config.configure.unban-all": "Tüm Oyuncuları Otomatik Yasak Kaldır",
+  "config.configure.unban-all.tooltip": "Harita yapılandırırken tüm oyuncuların yasağını otomatik olarak kaldır.",
+  
+  "configure.log-attempting": "Harita ayarlarını otomatik yapılandırma deneniyor...",
+  "configure.log-completed": "Harita otomatik yapılandırması başarıyla tamamlandı",
+  "configure.log-command-executed": "Komut çalıştırıldı: {{command}}",
+  "configure.error-failed": "Harita otomatik yapılandırması sırasında hata: {{error}}",
+  "configure.error-chatbox-unavailable": "Komut yürütme için sohbet kutusu mevcut değil",
+  "configure.error-command-failed": "{{command}} {{parameter}} komutunu çalıştırma hatası: {{error}}",
+  
+  "debug.configure-manager-init": "AutoConfigureManager başlatıldı",
+  "debug.save-loaded-configure": "Kayıt yüklendi. Otomatik yapılandırma bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.about.header": "Hakkında",
+  "config.about.repository": "Kaynak Kodu: github.com/kapuic/smapi-multiplayer-helper",
+  "config.about.copyright": "© 2025 Ka Pui Cheung. MIT Lisansı altında lisanslanmıştır."
 }

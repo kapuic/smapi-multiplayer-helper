@@ -13,12 +13,14 @@ namespace MultiplayerHelper.Components
     {
         private readonly IModHelper helper;
         private readonly IMonitor monitor;
+        private readonly ModConfig config;
         private bool hasHostedSession = false;
 
-        public InviteCodeManager(IModHelper helper, IMonitor monitor)
+        public InviteCodeManager(IModHelper helper, IMonitor monitor, ModConfig config)
         {
             this.helper = helper;
             this.monitor = monitor;
+            this.config = config;
         }
 
         /// <summary>
@@ -26,9 +28,12 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Initialize()
         {
+            if (!config.InviteCodeEnabled)
+                return;
+                
             helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
-            monitor.Log(helper.Translation.Get("debug.invite-manager-init"), LogLevel.Debug);
+            monitor.Log(helper.Translation.Get("debug.invite-manager-init"), config.LogLevel);
         }
 
         /// <summary>
@@ -43,7 +48,7 @@ namespace MultiplayerHelper.Components
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
             hasHostedSession = false;
-            monitor.Log(helper.Translation.Get("debug.save-loaded-invite", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), LogLevel.Debug);
+            monitor.Log(helper.Translation.Get("debug.save-loaded-invite", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), config.LogLevel);
         }
 
         private void OnUpdateTicked(object sender, UpdateTickedEventArgs e)
@@ -101,12 +106,15 @@ namespace MultiplayerHelper.Components
                     CopyToClipboard(inviteCode);
                     hasHostedSession = true;
 
-                    Game1.addHUDMessage(new HUDMessage(helper.Translation.Get("invite.hud-copied", new { code = inviteCode }), HUDMessage.achievement_type));
-                    monitor.Log(helper.Translation.Get("invite.log-copied", new { code = inviteCode }), LogLevel.Info);
+                    if (config.ShowHudNotifications)
+                    {
+                        Game1.addHUDMessage(new HUDMessage(helper.Translation.Get("invite.hud-copied", new { code = inviteCode }), HUDMessage.achievement_type));
+                    }
+                    monitor.Log(helper.Translation.Get("invite.log-copied", new { code = inviteCode }), config.LogLevel);
                 }
                 else
                 {
-                    monitor.Log(helper.Translation.Get("invite.log-unavailable"), LogLevel.Trace);
+                    monitor.Log(helper.Translation.Get("invite.log-unavailable"), config.LogLevel);
                 }
             }
             catch (Exception ex)
@@ -126,8 +134,11 @@ namespace MultiplayerHelper.Components
             {
                 monitor.Log(helper.Translation.Get("invite.error-clipboard", new { error = ex.Message }), LogLevel.Error);
 
-                // Fallback: Log the invite code for manual copying
-                monitor.Log(helper.Translation.Get("invite.hud-manual", new { code = text }), LogLevel.Alert);
+                // Fallback: Show manual copy message if enabled
+                if (config.ShowManualCopyMessage)
+                {
+                    monitor.Log(helper.Translation.Get("invite.hud-manual", new { code = text }), LogLevel.Alert);
+                }
             }
         }
     }

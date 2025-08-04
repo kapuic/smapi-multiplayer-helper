@@ -1,8 +1,9 @@
 {
   
   "core.name": "Multiplayer Helper",
-  "core.description": "Automatically copies multiplayer invite codes and pauses game when host joins",
+  "core.description": "Auto-copy invite codes, pause shortcuts, whitelist, and auto-configuration",
   "core.loaded": "MultiplayerHelper mod loaded with modular architecture!",
+  "core.disabled": "MultiplayerHelper mod is disabled in config",
   
   "invite.hud-copied": "Invite code copied to clipboard: {{code}}",
   "invite.hud-manual": "Invite code (copy manually): {{code}}",
@@ -33,5 +34,61 @@
   "debug.pause-manager-init": "AutoPauseManager initialized (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Game launched, configuring components...",
   "debug.save-loaded-invite": "Save loaded. Reset hosted session flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  "debug.save-loaded-pause": "Save loaded. Reset auto-pause flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+  "debug.save-loaded-pause": "Save loaded. Reset auto-pause flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.general.header": "General Settings",
+  "config.general.mod-enabled": "Enable Mod",
+  "config.general.mod-enabled.tooltip": "Enable or disable all mod functionality.",
+  "config.general.log-level": "Log Level",
+  "config.general.log-level.tooltip": "Set how much information to log.",
+  
+  "config.invite.header": "Invite Code Settings",
+  "config.invite.enabled": "Auto-Copy Invite Codes",
+  "config.invite.enabled.tooltip": "Automatically copy multiplayer invite codes to clipboard.",
+  "config.invite.show-hud-notifications": "Show HUD Notifications",
+  "config.invite.show-hud-notifications.tooltip": "Display notification when invite code is copied.",
+  "config.invite.show-manual-copy-message": "Show Manual Copy Messages",
+  "config.invite.show-manual-copy-message.tooltip": "Show manual copy message when clipboard fails.",
+  
+  "config.pause.header": "Pause Settings",
+  "config.pause.enabled": "Auto-Pause When Hosting",
+  "config.pause.enabled.tooltip": "Automatically pause game when you start hosting a multiplayer session.",
+  "config.pause.method": "Pause Method",
+  "config.pause.method.tooltip": "Choose how to pause the game.",
+  "config.pause.method-direct": "Direct Pause (Local Only)",
+  "config.pause.method-chatbox": "Chatbox Command (Multiplayer)",
+  "config.pause.enable-manual-toggle": "Enable Manual Toggle",
+  "config.pause.enable-manual-toggle.tooltip": "Allow manual pause/resume with configurable key.",
+  "config.pause.toggle-key": "Pause Toggle Key",
+  "config.pause.toggle-key.tooltip": "Key combination to manually pause/resume the game.",
+  
+  "config.configure.header": "Auto-Configure Settings",
+  "config.configure.enabled": "Enable Auto-Configure",
+  "config.configure.enabled.tooltip": "Automatically configure map settings when hosting multiplayer.",
+  "config.configure.sleep-announce-mode": "Sleep Announce Mode",
+  "config.configure.sleep-announce-mode.tooltip": "Change when sleep messages are shown in multiplayer.",
+  "config.configure.sleep-announce-mode-off": "Off (Never)",
+  "config.configure.sleep-announce-mode-first": "First (First Time Each Day)",
+  "config.configure.sleep-announce-mode-all": "All (Every Time)",
+  "config.configure.move-building-permission": "Move Building Permission",
+  "config.configure.move-building-permission.tooltip": "Change whether farmhands can move buildings.",
+  "config.configure.move-building-permission-off": "Off (No Moving)",
+  "config.configure.move-building-permission-owned": "Owned (Own Buildings Only)",
+  "config.configure.move-building-permission-on": "On (All Buildings)",
+  "config.configure.unban-all": "Auto Unban All Players",
+  "config.configure.unban-all.tooltip": "Automatically unban all players when configuring the map.",
+  
+  "configure.log-attempting": "Attempting to auto-configure map settings...",
+  "configure.log-completed": "Map auto-configuration completed successfully",
+  "configure.log-command-executed": "Executed command: {{command}}",
+  "configure.error-failed": "Error during map auto-configuration: {{error}}",
+  "configure.error-chatbox-unavailable": "Chatbox not available for command execution",
+  "configure.error-command-failed": "Error executing command {{command}} {{parameter}}: {{error}}",
+  
+  "debug.configure-manager-init": "AutoConfigureManager initialized",
+  "debug.save-loaded-configure": "Save loaded. Reset auto-configure flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.about.header": "About",
+  "config.about.repository": "Source Code: github.com/kapuic/smapi-multiplayer-helper",
+  "config.about.copyright": "© 2025 Ka Pui Cheung. Licensed under MIT License."
 }

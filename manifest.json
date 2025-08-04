@@ -2,7 +2,7 @@
   "Name": "Multiplayer Helper",
   "Author": "Ka Pui Cheung",
   "Version": "1.0.0",
-  "Description": "Automatically copies multiplayer invite codes to clipboard and pauses game when host joins",
+  "Description": "A comprehensive SMAPI mod that enhances multiplayer hosting with auto-copy invite codes, smart pause system, server auto-configuration, and full Generic Mod Config Menu support with 12 languages",
   "UniqueID": "KaPuiCheung.MultiplayerHelper",
   "EntryDll": "MultiplayerHelper.dll",
   "MinimumApiVersion": "3.0.0",

@@ -12,13 +12,15 @@ namespace MultiplayerHelper.Components
     {
         private readonly IModHelper helper;
         private readonly IMonitor monitor;
+        private readonly ModConfig config;
         private bool hasAutoPaused = false;
         private bool useDirectPause = false; // Set to true to use Game1.paused instead of chatbox
 
-        public AutoPauseManager(IModHelper helper, IMonitor monitor)
+        public AutoPauseManager(IModHelper helper, IMonitor monitor, ModConfig config)
         {
             this.helper = helper;
             this.monitor = monitor;
+            this.config = config;
         }
 
         /// <summary>
@@ -35,11 +37,19 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Initialize()
         {
+            if (!config.AutoPauseEnabled)
+                return;
+                
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             helper.Events.Player.Warped += OnPlayerWarped;
             helper.Events.Multiplayer.PeerConnected += OnPeerConnected;
-            helper.Events.Input.ButtonPressed += OnButtonPressed;
-            monitor.Log(helper.Translation.Get("debug.pause-manager-init", new { useDirectPause = useDirectPause }), LogLevel.Debug);
+            
+            if (config.EnableManualToggle)
+            {
+                helper.Events.Input.ButtonPressed += OnButtonPressed;
+            }
+            
+            monitor.Log(helper.Translation.Get("debug.pause-manager-init", new { useDirectPause = useDirectPause }), config.LogLevel);
         }
 
         /// <summary>
@@ -50,13 +60,16 @@ namespace MultiplayerHelper.Components
             helper.Events.GameLoop.SaveLoaded -= OnSaveLoaded;
             helper.Events.Player.Warped -= OnPlayerWarped;
             helper.Events.Multiplayer.PeerConnected -= OnPeerConnected;
-            helper.Events.Input.ButtonPressed -= OnButtonPressed;
+            if (config.EnableManualToggle)
+            {
+                helper.Events.Input.ButtonPressed -= OnButtonPressed;
+            }
         }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
             hasAutoPaused = false;
-            monitor.Log(helper.Translation.Get("debug.save-loaded-pause", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), LogLevel.Debug);
+            monitor.Log(helper.Translation.Get("debug.save-loaded-pause", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), config.LogLevel);
 
             // Auto-pause immediately when hosting multiplayer
             if (Context.IsMainPlayer && Context.IsMultiplayer)
@@ -145,8 +158,8 @@ namespace MultiplayerHelper.Components
 
         private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
         {
-            // Check if player pressed P key to toggle pause (only in multiplayer as host)
-            if (Context.IsWorldReady && Context.IsMainPlayer && Context.IsMultiplayer && e.Button == SButton.P)
+            // Check if player pressed the configured keybind to toggle pause (only in multiplayer as host)
+            if (Context.IsWorldReady && Context.IsMainPlayer && Context.IsMultiplayer && config.PauseToggleKey.JustPressed())
             {
                 if (Game1.paused)
                 {

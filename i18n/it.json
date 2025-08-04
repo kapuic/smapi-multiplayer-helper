@@ -1,7 +1,8 @@
 {
   "core.name": "Assistente Multiplayer",
-  "core.description": "Copia automaticamente i codici di invito multiplayer e mette in pausa il gioco quando si unisce l'host",
+  "core.description": "Copia automatica codici invito, scorciatoie pausa, whitelist e auto-configurazione",
   "core.loaded": "Mod MultiplayerHelper caricata con architettura modulare!",
+  "core.disabled": "La mod MultiplayerHelper è disabilitata nella configurazione",
   
   "invite.hud-copied": "Codice di invito copiato negli appunti: {{code}}",
   "invite.hud-manual": "Codice di invito (copia manualmente): {{code}}",
@@ -32,5 +33,61 @@
   "debug.pause-manager-init": "AutoPauseManager inizializzato (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Gioco avviato, configurazione componenti...",
   "debug.save-loaded-invite": "Salvataggio caricato. Flag sessione host reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  "debug.save-loaded-pause": "Salvataggio caricato. Flag auto-pausa reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+  "debug.save-loaded-pause": "Salvataggio caricato. Flag auto-pausa reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.general.header": "Impostazioni Generali",
+  "config.general.mod-enabled": "Abilita Mod",
+  "config.general.mod-enabled.tooltip": "Abilita o disabilita tutte le funzionalità della mod.",
+  "config.general.log-level": "Livello Log",
+  "config.general.log-level.tooltip": "Imposta quante informazioni registrare nel log.",
+  
+  "config.invite.header": "Impostazioni Codice Invito",
+  "config.invite.enabled": "Copia Automatica Codici Invito",
+  "config.invite.enabled.tooltip": "Copia automaticamente i codici invito multiplayer negli appunti.",
+  "config.invite.show-hud-notifications": "Mostra Notifiche HUD",
+  "config.invite.show-hud-notifications.tooltip": "Visualizza notifica quando il codice invito viene copiato.",
+  "config.invite.show-manual-copy-message": "Mostra Messaggi Copia Manuale",
+  "config.invite.show-manual-copy-message.tooltip": "Mostra messaggio di copia manuale quando gli appunti falliscono.",
+  
+  "config.pause.header": "Impostazioni Pausa",
+  "config.pause.enabled": "Auto-Pausa Durante l'Hosting",
+  "config.pause.enabled.tooltip": "Metti automaticamente in pausa il gioco quando inizi a ospitare una sessione multiplayer.",
+  "config.pause.method": "Metodo di Pausa",
+  "config.pause.method.tooltip": "Scegli come mettere in pausa il gioco.",
+  "config.pause.method-direct": "Pausa Diretta (Solo Locale)",
+  "config.pause.method-chatbox": "Comando Chat (Multiplayer)",
+  "config.pause.enable-manual-toggle": "Abilita Interruttore Manuale",
+  "config.pause.enable-manual-toggle.tooltip": "Permetti pausa/ripresa manuale con tasto configurabile.",
+  "config.pause.toggle-key": "Tasto Alternanza Pausa",
+  "config.pause.toggle-key.tooltip": "Combinazione di tasti per mettere manualmente in pausa/riprendere il gioco.",
+  
+  "config.configure.header": "Impostazioni Auto-Configurazione",
+  "config.configure.enabled": "Abilita Auto-Configurazione",
+  "config.configure.enabled.tooltip": "Configura automaticamente le impostazioni della mappa quando si ospita il multiplayer.",
+  "config.configure.sleep-announce-mode": "Modalità Annuncio Sonno",
+  "config.configure.sleep-announce-mode.tooltip": "Cambia quando vengono mostrati i messaggi di sonno nel multiplayer.",
+  "config.configure.sleep-announce-mode-off": "Spento (Mai)",
+  "config.configure.sleep-announce-mode-first": "Primo (Prima Volta Ogni Giorno)",
+  "config.configure.sleep-announce-mode-all": "Tutti (Ogni Volta)",
+  "config.configure.move-building-permission": "Permesso Spostamento Edifici",
+  "config.configure.move-building-permission.tooltip": "Cambia se i lavoratori della fattoria possono spostare gli edifici.",
+  "config.configure.move-building-permission-off": "Spento (Nessuno Spostamento)",
+  "config.configure.move-building-permission-owned": "Posseduti (Solo Edifici Propri)",
+  "config.configure.move-building-permission-on": "Acceso (Tutti gli Edifici)",
+  "config.configure.unban-all": "Rimuovi Ban Automaticamente a Tutti i Giocatori",
+  "config.configure.unban-all.tooltip": "Rimuovi automaticamente il ban a tutti i giocatori quando configuri la mappa.",
+  
+  "configure.log-attempting": "Tentativo di auto-configurazione delle impostazioni della mappa...",
+  "configure.log-completed": "Auto-configurazione della mappa completata con successo",
+  "configure.log-command-executed": "Comando eseguito: {{command}}",
+  "configure.error-failed": "Errore durante l'auto-configurazione della mappa: {{error}}",
+  "configure.error-chatbox-unavailable": "Chatbox non disponibile per l'esecuzione dei comandi",
+  "configure.error-command-failed": "Errore nell'esecuzione del comando {{command}} {{parameter}}: {{error}}",
+  
+  "debug.configure-manager-init": "AutoConfigureManager inizializzato",
+  "debug.save-loaded-configure": "Salvataggio caricato. Flag auto-configurazione reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.about.header": "Informazioni",
+  "config.about.repository": "Codice Sorgente: github.com/kapuic/smapi-multiplayer-helper",
+  "config.about.copyright": "© 2025 Ka Pui Cheung. Licenziato sotto Licenza MIT."
 }

@@ -1,4 +1,5 @@
 using StardewModdingAPI;
+using StardewModdingAPI.Utilities;
 
 namespace MultiplayerHelper
 {
@@ -46,6 +47,31 @@ namespace MultiplayerHelper
         /// Gets or sets whether manual P key pause/resume toggle is enabled.
         /// </summary>
         public bool EnableManualToggle { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets the keybind for manual pause/resume toggle.
+        /// </summary>
+        public KeybindList PauseToggleKey { get; set; } = KeybindList.Parse("P");
+
+        /// <summary>
+        /// Gets or sets whether auto-configure functionality is enabled.
+        /// </summary>
+        public bool AutoConfigureEnabled { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets the parameter for sleepAnnounceMode command.
+        /// </summary>
+        public SleepAnnounceMode SleepAnnounceModeParameter { get; set; } = SleepAnnounceMode.All;
+
+        /// <summary>
+        /// Gets or sets the parameter for moveBuildingPermission command.
+        /// </summary>
+        public MoveBuildingPermission MoveBuildingPermissionParameter { get; set; } = MoveBuildingPermission.Owned;
+
+        /// <summary>
+        /// Gets or sets whether to automatically unban all players when configuring the map.
+        /// </summary>
+        public bool UnbanAllEnabled { get; set; } = false;
     }
 
     /// <summary>
@@ -62,5 +88,47 @@ namespace MultiplayerHelper
         /// Chatbox pause command (multiplayer synchronized).
         /// </summary>
         Chatbox
+    }
+
+    /// <summary>
+    /// Defines the available sleep announce modes.
+    /// </summary>
+    public enum SleepAnnounceMode
+    {
+        /// <summary>
+        /// Never show sleep messages.
+        /// </summary>
+        Off,
+
+        /// <summary>
+        /// Only show the first time a player sleeps each day.
+        /// </summary>
+        First,
+
+        /// <summary>
+        /// Show every time a player sleeps.
+        /// </summary>
+        All
+    }
+
+    /// <summary>
+    /// Defines the available move building permission levels.
+    /// </summary>
+    public enum MoveBuildingPermission
+    {
+        /// <summary>
+        /// Farmhands can't move any buildings.
+        /// </summary>
+        Off,
+
+        /// <summary>
+        /// Farmhands can move their own buildings.
+        /// </summary>
+        Owned,
+
+        /// <summary>
+        /// Farmhands can move all buildings.
+        /// </summary>
+        On
     }
 }

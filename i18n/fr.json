@@ -1,7 +1,7 @@
 {
   
   "core.name": "Assistant Multijoueur",
-  "core.description": "Copie automatiquement les codes d'invitation multijoueur et met en pause le jeu quand l'hôte rejoint",
+  "core.description": "Copie auto codes d'invitation, raccourcis pause, whitelist et auto-configuration",
   "core.loaded": "Mod MultiplayerHelper chargé avec une architecture modulaire !",
   
   "invite.hud-copied": "Code d'invitation copié dans le presse-papiers : {{code}}",
@@ -33,5 +33,61 @@
   "debug.pause-manager-init": "AutoPauseManager initialisé (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper : Jeu lancé, configuration des composants...",
   "debug.save-loaded-invite": "Sauvegarde chargée. Flag de session hébergée réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  "debug.save-loaded-pause": "Sauvegarde chargée. Flag de pause automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}"
+  "debug.save-loaded-pause": "Sauvegarde chargée. Flag de pause automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.general.header": "Paramètres Généraux",
+  "config.general.mod-enabled": "Activer le Mod",
+  "config.general.mod-enabled.tooltip": "Activer ou désactiver toutes les fonctionnalités du mod.",
+  "config.general.log-level": "Niveau de Journal",
+  "config.general.log-level.tooltip": "Définir la quantité d'informations à journaliser.",
+  
+  "config.invite.header": "Paramètres des Codes d'Invitation",
+  "config.invite.enabled": "Copier Automatiquement les Codes d'Invitation",
+  "config.invite.enabled.tooltip": "Copier automatiquement les codes d'invitation multijoueur dans le presse-papiers.",
+  "config.invite.show-hud-notifications": "Afficher les Notifications HUD",
+  "config.invite.show-hud-notifications.tooltip": "Afficher une notification quand le code d'invitation est copié.",
+  "config.invite.show-manual-copy-message": "Afficher les Messages de Copie Manuelle",
+  "config.invite.show-manual-copy-message.tooltip": "Afficher un message de copie manuelle quand le presse-papiers échoue.",
+  
+  "config.pause.header": "Paramètres de Pause",
+  "config.pause.enabled": "Auto-Pause Lors de l'Hébergement",
+  "config.pause.enabled.tooltip": "Mettre automatiquement en pause le jeu lorsque vous hébergez une session multijoueur.",
+  "config.pause.method": "Méthode de Pause",
+  "config.pause.method.tooltip": "Choisir comment mettre le jeu en pause.",
+  "config.pause.method-direct": "Pause Directe (Local Uniquement)",
+  "config.pause.method-chatbox": "Commande de Chat (Multijoueur)",
+  "config.pause.enable-manual-toggle": "Activer la Bascule Manuelle",
+  "config.pause.enable-manual-toggle.tooltip": "Permettre la pause/reprise manuelle avec une touche configurable.",
+  "config.pause.toggle-key": "Touche de Bascule de Pause",
+  "config.pause.toggle-key.tooltip": "Combinaison de touches pour mettre manuellement en pause/reprendre le jeu.",
+  
+  "config.configure.header": "Paramètres de Configuration Automatique",
+  "config.configure.enabled": "Activer la Configuration Automatique",
+  "config.configure.enabled.tooltip": "Configurer automatiquement les paramètres de carte lors de l'hébergement multijoueur.",
+  "config.configure.sleep-announce-mode": "Mode d'Annonce de Sommeil",
+  "config.configure.sleep-announce-mode.tooltip": "Changer quand les messages de sommeil sont affichés en multijoueur.",
+  "config.configure.sleep-announce-mode-off": "Désactivé (Jamais)",
+  "config.configure.sleep-announce-mode-first": "Premier (Première Fois Chaque Jour)",
+  "config.configure.sleep-announce-mode-all": "Tous (Chaque Fois)",
+  "config.configure.move-building-permission": "Permission de Déplacer les Bâtiments",
+  "config.configure.move-building-permission.tooltip": "Changer si les ouvriers peuvent déplacer les bâtiments.",
+  "config.configure.move-building-permission-off": "Désactivé (Aucun Déplacement)",
+  "config.configure.move-building-permission-owned": "Propres (Bâtiments Propres Seulement)",
+  "config.configure.move-building-permission-on": "Activé (Tous les Bâtiments)",
+  "config.configure.unban-all": "Débannir Automatiquement Tous les Joueurs",
+  "config.configure.unban-all.tooltip": "Débannir automatiquement tous les joueurs lors de la configuration de la carte.",
+  
+  "configure.log-attempting": "Tentative de configuration automatique des paramètres de carte...",
+  "configure.log-completed": "Configuration automatique de la carte terminée avec succès",
+  "configure.log-command-executed": "Commande exécutée: {{command}}",
+  "configure.error-failed": "Erreur lors de la configuration automatique de la carte: {{error}}",
+  "configure.error-chatbox-unavailable": "Boîte de chat non disponible pour l'exécution de commande",
+  "configure.error-command-failed": "Erreur lors de l'exécution de la commande {{command}} {{parameter}}: {{error}}",
+  
+  "debug.configure-manager-init": "AutoConfigureManager initialisé",
+  "debug.save-loaded-configure": "Sauvegarde chargée. Drapeau de configuration automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.about.header": "À propos",
+  "config.about.repository": "Code Source: github.com/kapuic/smapi-multiplayer-helper",
+  "config.about.copyright": "© 2025 Ka Pui Cheung. Sous licence MIT."
 }
