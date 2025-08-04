@@ -2,6 +2,7 @@
   "core.name": "Помощник Мультиплеера",
   "core.description": "Авто-копия кодов приглашения, сочетания паузы, whitelist и авто-конфигурация",
   "core.loaded": "Мод MultiplayerHelper загружен с модульной архитектурой!",
+  "core.disabled": "MultiplayerHelper мод отключен в конфигурации",
   
   "invite.hud-copied": "Код приглашения скопирован в буфер обмена: {{code}}",
   "invite.hud-manual": "Код приглашения (скопировать вручную): {{code}}",
@@ -85,6 +86,30 @@
   
   "debug.configure-manager-init": "AutoConfigureManager инициализирован",
   "debug.save-loaded-configure": "Сохранение загружено. Флаг автоконфигурации сброшен. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.whitelist.header": "Настройки Белого Списка",
+  "config.whitelist.setup-info": "Настройка белого списка: Включите логирование ниже, пусть игроки подключатся чтобы увидеть их идентификаторы в консоли, затем добавьте нужные идентификаторы в файл whitelist.json.",
+  "config.whitelist.enabled": "Включить Белый Список",
+  "config.whitelist.enabled.tooltip": "Разрешить подключение только игрокам из белого списка.",
+  "config.whitelist.log-player-identifiers": "Записывать Идентификаторы Игроков",
+  "config.whitelist.log-player-identifiers.tooltip": "Отображать идентификаторы игроков в консоли для помощи в настройке белого списка.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager инициализирован",
+  "whitelist.log-enabled": "Функциональность белого списка включена",
+  "whitelist.log-disabled": "Функциональность белого списка отключена",
+  "whitelist.log-loaded": "Белый список загружен с {{count}} записями",
+  "whitelist.log-created": "Создан файл whitelist.json",
+  "whitelist.log-reloaded": "Белый список перезагружен из файла",
+  "whitelist.log-player-joined": "Игрок подключился: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Игрок исключен (не в белом списке): {{player}}",
+  "whitelist.log-kick-executed": "Выполнена команда исключения: {{command}}",
+  
+  "whitelist.error-loading": "Ошибка загрузки белого списка: {{error}}",
+  "whitelist.error-saving": "Ошибка сохранения белого списка: {{error}}",
+  "whitelist.error-file-watcher": "Ошибка настройки наблюдателя файла: {{error}}",
+  "whitelist.error-reload": "Ошибка перезагрузки белого списка: {{error}}",
+  "whitelist.error-checking": "Ошибка проверки белого списка: {{error}}",
+  "whitelist.error-kick": "Ошибка исключения игрока: {{error}}",
   
   "config.about.header": "О моде",
   "config.about.repository": "Исходный код: github.com/kapuic/smapi-multiplayer-helper",

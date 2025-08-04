@@ -87,6 +87,30 @@
   "debug.configure-manager-init": "AutoConfigureManager inizializzato",
   "debug.save-loaded-configure": "Salvataggio caricato. Flag auto-configurazione reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   
+  "config.whitelist.header": "Impostazioni Whitelist",
+  "config.whitelist.setup-info": "Per configurare la whitelist: Attiva il logging qui sotto, lascia che i giocatori si uniscano per vedere i loro identificatori nella console, poi aggiungi gli identificatori desiderati al file whitelist.json.",
+  "config.whitelist.enabled": "Abilita Whitelist",
+  "config.whitelist.enabled.tooltip": "Consenti solo ai giocatori nella whitelist di unirsi al server.",
+  "config.whitelist.log-player-identifiers": "Registra Identificatori Giocatori",
+  "config.whitelist.log-player-identifiers.tooltip": "Visualizza identificatori giocatori nella console quando si uniscono per aiutarti a configurare la whitelist.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager inizializzato",
+  "whitelist.log-enabled": "Funzionalità whitelist abilitata",
+  "whitelist.log-disabled": "Funzionalità whitelist disabilitata",
+  "whitelist.log-loaded": "Whitelist caricata con {{count}} voci",
+  "whitelist.log-created": "File whitelist.json creato",
+  "whitelist.log-reloaded": "Whitelist ricaricata dal file",
+  "whitelist.log-player-joined": "Giocatore entrato: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Giocatore espulso (non in whitelist): {{player}}",
+  "whitelist.log-kick-executed": "Comando espulsione eseguito: {{command}}",
+  
+  "whitelist.error-loading": "Errore caricamento whitelist: {{error}}",
+  "whitelist.error-saving": "Errore salvataggio whitelist: {{error}}",
+  "whitelist.error-file-watcher": "Errore impostazione monitor file: {{error}}",
+  "whitelist.error-reload": "Errore ricaricamento whitelist: {{error}}",
+  "whitelist.error-checking": "Errore controllo whitelist: {{error}}",
+  "whitelist.error-kick": "Errore espulsione giocatore: {{error}}",
+  
   "config.about.header": "Informazioni",
   "config.about.repository": "Codice Sorgente: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Licenziato sotto Licenza MIT."

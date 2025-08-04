@@ -15,6 +15,7 @@ namespace MultiplayerHelper
         private InviteCodeManager inviteCodeManager;
         private AutoPauseManager autoPauseManager;
         private AutoConfigureManager autoConfigureManager;
+        private WhitelistManager whitelistManager;
 
         /// <summary>
         /// The mod entry point, called after the mod is first loaded.
@@ -37,6 +38,7 @@ namespace MultiplayerHelper
             inviteCodeManager = new InviteCodeManager(helper, Monitor, config);
             autoPauseManager = new AutoPauseManager(helper, Monitor, config);
             autoConfigureManager = new AutoConfigureManager(helper, Monitor, config);
+            whitelistManager = new WhitelistManager(helper, Monitor, config);
 
             // Subscribe to mod-level events
             helper.Events.GameLoop.GameLaunched += OnGameLaunched;
@@ -251,6 +253,36 @@ namespace MultiplayerHelper
                 setValue: value => config.UnbanAllEnabled = value
             );
             
+            // Whitelist Settings Section
+            configMenuApi.AddSectionTitle(
+                mod: ModManifest,
+                text: () => Helper.Translation.Get("config.whitelist.header")
+            );
+            
+            configMenuApi.AddParagraph(
+                mod: ModManifest,
+                text: () => Helper.Translation.Get("config.whitelist.setup-info")
+            );
+            
+            configMenuApi.AddBoolOption(
+                mod: ModManifest,
+                name: () => Helper.Translation.Get("config.whitelist.enabled"),
+                tooltip: () => Helper.Translation.Get("config.whitelist.enabled.tooltip"),
+                getValue: () => config.WhitelistEnabled,
+                setValue: value => {
+                    config.WhitelistEnabled = value;
+                    whitelistManager?.SetEnabled(value);
+                }
+            );
+            
+            configMenuApi.AddBoolOption(
+                mod: ModManifest,
+                name: () => Helper.Translation.Get("config.whitelist.log-player-identifiers"),
+                tooltip: () => Helper.Translation.Get("config.whitelist.log-player-identifiers.tooltip"),
+                getValue: () => config.ShowPlayerJoinInfo,
+                setValue: value => config.ShowPlayerJoinInfo = value
+            );
+            
             // About Section
             configMenuApi.AddSectionTitle(
                 mod: ModManifest,
@@ -278,6 +310,7 @@ namespace MultiplayerHelper
                 inviteCodeManager?.Dispose();
                 autoPauseManager?.Dispose();
                 autoConfigureManager?.Dispose();
+                whitelistManager?.Dispose();
             }
             base.Dispose(disposing);
         }

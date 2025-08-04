@@ -88,6 +88,30 @@
   "debug.configure-manager-init": "AutoConfigureManager inicializado",
   "debug.save-loaded-configure": "Guardado cargado. Bandera de auto-configuración reiniciada. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   
+  "config.whitelist.header": "Configuración de Lista Blanca",
+  "config.whitelist.setup-info": "Para configurar lista blanca: Habilita el registro abajo, deja que los jugadores se conecten para ver sus identificadores en consola, luego añade los identificadores deseados al archivo whitelist.json.",
+  "config.whitelist.enabled": "Habilitar Lista Blanca",
+  "config.whitelist.enabled.tooltip": "Solo permitir que jugadores en la lista blanca se unan al servidor.",
+  "config.whitelist.log-player-identifiers": "Registrar Identificadores de Jugadores",
+  "config.whitelist.log-player-identifiers.tooltip": "Mostrar identificadores de jugadores en consola para ayudar a configurar la lista blanca.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager inicializado",
+  "whitelist.log-enabled": "Funcionalidad de lista blanca habilitada",
+  "whitelist.log-disabled": "Funcionalidad de lista blanca deshabilitada",
+  "whitelist.log-loaded": "Lista blanca cargada con {{count}} entradas",
+  "whitelist.log-created": "Archivo whitelist.json creado",
+  "whitelist.log-reloaded": "Lista blanca recargada desde archivo",
+  "whitelist.log-player-joined": "Jugador conectado: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Jugador expulsado (no está en lista blanca): {{player}}",
+  "whitelist.log-kick-executed": "Comando de expulsión ejecutado: {{command}}",
+  
+  "whitelist.error-loading": "Error cargando lista blanca: {{error}}",
+  "whitelist.error-saving": "Error guardando lista blanca: {{error}}",
+  "whitelist.error-file-watcher": "Error configurando monitor de archivo de lista blanca: {{error}}",
+  "whitelist.error-reload": "Error recargando lista blanca: {{error}}",
+  "whitelist.error-checking": "Error verificando lista blanca de jugador: {{error}}",
+  "whitelist.error-kick": "Error expulsando jugador: {{error}}",
+  
   "config.about.header": "Acerca de",
   "config.about.repository": "Código Fuente: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Licenciado bajo Licencia MIT."

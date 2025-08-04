@@ -88,6 +88,30 @@
   "debug.configure-manager-init": "AutoConfigureManager initialized",
   "debug.save-loaded-configure": "Save loaded. Reset auto-configure flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   
+  "config.whitelist.header": "Whitelist Settings",
+  "config.whitelist.setup-info": "To set up whitelist: Enable logging below, let players join to see their identifiers in console, then add desired identifiers to whitelist.json file.",
+  "config.whitelist.enabled": "Enable Whitelist",
+  "config.whitelist.enabled.tooltip": "Only allow whitelisted players to join the server.",
+  "config.whitelist.log-player-identifiers": "Log Player Identifiers",
+  "config.whitelist.log-player-identifiers.tooltip": "Display player identifiers in console when players join to help you set up the whitelist.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager initialized",
+  "whitelist.log-enabled": "Whitelist functionality enabled",
+  "whitelist.log-disabled": "Whitelist functionality disabled",
+  "whitelist.log-loaded": "Whitelist loaded with {{count}} entries",
+  "whitelist.log-created": "Created new whitelist.json file",
+  "whitelist.log-reloaded": "Whitelist reloaded from file",
+  "whitelist.log-player-joined": "Player joined: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Player kicked (not whitelisted): {{player}}",
+  "whitelist.log-kick-executed": "Executed kick command: {{command}}",
+  
+  "whitelist.error-loading": "Error loading whitelist: {{error}}",
+  "whitelist.error-saving": "Error saving whitelist: {{error}}",
+  "whitelist.error-file-watcher": "Error setting up whitelist file watcher: {{error}}",
+  "whitelist.error-reload": "Error reloading whitelist: {{error}}",
+  "whitelist.error-checking": "Error checking player whitelist: {{error}}",
+  "whitelist.error-kick": "Error kicking player: {{error}}",
+  
   "config.about.header": "About",
   "config.about.repository": "Source Code: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Licensed under MIT License."

@@ -2,6 +2,7 @@
   "core.name": "マルチプレイヤーヘルパー",
   "core.description": "招待コード自動コピー、一時停止ショートカット、ホワイトリスト、自動設定",
   "core.loaded": "MultiplayerHelperモッドがモジュラーアーキテクチャで読み込まれました！",
+  "core.disabled": "MultiplayerHelperモッドが設定で無効化されています",
   
   "invite.hud-copied": "招待コードをクリップボードにコピーしました: {{code}}",
   "invite.hud-manual": "招待コード（手動でコピー）: {{code}}",
@@ -85,6 +86,30 @@
   
   "debug.configure-manager-init": "AutoConfigureManagerが初期化されました",
   "debug.save-loaded-configure": "セーブが読み込まれました。自動設定フラグをリセット。IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.whitelist.header": "ホワイトリスト設定",
+  "config.whitelist.setup-info": "ホワイトリストの設定方法：下記のログを有効にし、プレイヤーに参加してもらいコンソールで識別子を確認し、必要な識別子をwhitelist.jsonファイルに追加してください。",
+  "config.whitelist.enabled": "ホワイトリストを有効にする",
+  "config.whitelist.enabled.tooltip": "ホワイトリストに登録されたプレイヤーのみサーバーへの参加を許可。",
+  "config.whitelist.log-player-identifiers": "プレイヤー識別子をログ出力",
+  "config.whitelist.log-player-identifiers.tooltip": "ホワイトリスト設定の手助けとしてプレイヤー参加時にコンソールで識別子を表示。",
+  
+  "debug.whitelist-manager-init": "WhitelistManagerが初期化されました",
+  "whitelist.log-enabled": "ホワイトリスト機能が有効になりました",
+  "whitelist.log-disabled": "ホワイトリスト機能が無効になりました",
+  "whitelist.log-loaded": "ホワイトリストが{{count}}件のエントリで読み込まれました",
+  "whitelist.log-created": "whitelist.jsonファイルを作成しました",
+  "whitelist.log-reloaded": "ファイルからホワイトリストを再読み込みしました",
+  "whitelist.log-player-joined": "プレイヤーが参加: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "プレイヤーをキック（ホワイトリストに未登録）: {{player}}",
+  "whitelist.log-kick-executed": "キックコマンドを実行: {{command}}",
+  
+  "whitelist.error-loading": "ホワイトリスト読み込みエラー: {{error}}",
+  "whitelist.error-saving": "ホワイトリスト保存エラー: {{error}}",
+  "whitelist.error-file-watcher": "ファイル監視設定エラー: {{error}}",
+  "whitelist.error-reload": "ホワイトリスト再読み込みエラー: {{error}}",
+  "whitelist.error-checking": "ホワイトリストチェックエラー: {{error}}",
+  "whitelist.error-kick": "プレイヤーキックエラー: {{error}}",
   
   "config.about.header": "情報",
   "config.about.repository": "ソースコード: github.com/kapuic/smapi-multiplayer-helper",

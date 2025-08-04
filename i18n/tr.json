@@ -2,6 +2,7 @@
   "core.name": "Çok Oyunculu Yardımcısı",
   "core.description": "Otomatik davet kodu kopyalama, duraklat kısayolları, whitelist ve otomatik yapılandırma",
   "core.loaded": "MultiplayerHelper modu modüler mimari ile yüklendi!",
+  "core.disabled": "MultiplayerHelper modu yapılandırmada devre dışı bırakıldı",
   
   "invite.hud-copied": "Davet kodu panoya kopyalandı: {{code}}",
   "invite.hud-manual": "Davet kodu (manuel kopyala): {{code}}",
@@ -85,6 +86,30 @@
   
   "debug.configure-manager-init": "AutoConfigureManager başlatıldı",
   "debug.save-loaded-configure": "Kayıt yüklendi. Otomatik yapılandırma bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.whitelist.header": "Beyaz Liste Ayarları",
+  "config.whitelist.setup-info": "Beyaz liste kurulumu: Aşağıdaki günlüğü etkinleştirin, oyuncuların katılmasına izin verin ve konsolda tanımlayıcılarını görün, sonra istenen tanımlayıcıları whitelist.json dosyasına ekleyin.",
+  "config.whitelist.enabled": "Beyaz Liste Etkinleştir",
+  "config.whitelist.enabled.tooltip": "Sadece beyaz listedeki oyuncuların sunucuya katılmasına izin ver.",
+  "config.whitelist.log-player-identifiers": "Oyuncu Tanımlayıcıları Günlüğü",
+  "config.whitelist.log-player-identifiers.tooltip": "Beyaz liste kurulumunda yardımcı olmak için oyuncular katıldığında konsolda tanımlayıcıları göster.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager başlatıldı",
+  "whitelist.log-enabled": "Beyaz liste işlevliği etkinleştirildi",
+  "whitelist.log-disabled": "Beyaz liste işlevliği devre dışı bırakıldı",
+  "whitelist.log-loaded": "Beyaz liste {{count}} giriş ile yüklendi",
+  "whitelist.log-created": "whitelist.json dosyası oluşturuldu",
+  "whitelist.log-reloaded": "Beyaz liste dosyadan yeniden yüklendi",
+  "whitelist.log-player-joined": "Oyuncu katıldı: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Oyuncu atıldı (beyaz listede değil): {{player}}",
+  "whitelist.log-kick-executed": "Atma komutu çalıştırıldı: {{command}}",
+  
+  "whitelist.error-loading": "Beyaz liste yükleme hatası: {{error}}",
+  "whitelist.error-saving": "Beyaz liste kaydetme hatası: {{error}}",
+  "whitelist.error-file-watcher": "Dosya izleyici kurulum hatası: {{error}}",
+  "whitelist.error-reload": "Beyaz liste yeniden yükleme hatası: {{error}}",
+  "whitelist.error-checking": "Beyaz liste kontrol hatası: {{error}}",
+  "whitelist.error-kick": "Oyuncu atma hatası: {{error}}",
   
   "config.about.header": "Hakkında",
   "config.about.repository": "Kaynak Kodu: github.com/kapuic/smapi-multiplayer-helper",

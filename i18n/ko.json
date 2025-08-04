@@ -87,6 +87,30 @@
   "debug.configure-manager-init": "AutoConfigureManager가 초기화되었습니다",
   "debug.save-loaded-configure": "세이브가 로드되었습니다. 자동 구성 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   
+  "config.whitelist.header": "화이트리스트 설정",
+  "config.whitelist.setup-info": "화이트리스트 설정 방법: 아래 로깅을 활성화하고, 플레이어가 참가하여 콘솔에서 식별자를 확인한 후, 원하는 식별자를 whitelist.json 파일에 추가하세요.",
+  "config.whitelist.enabled": "화이트리스트 활성화",
+  "config.whitelist.enabled.tooltip": "화이트리스트에 등록된 플레이어만 서버에 참가를 허용합니다.",
+  "config.whitelist.log-player-identifiers": "플레이어 식별자 로깅",
+  "config.whitelist.log-player-identifiers.tooltip": "화이트리스트 설정을 도와주기 위해 플레이어 참가 시 콘솔에 식별자를 표시합니다.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager가 초기화되었습니다",
+  "whitelist.log-enabled": "화이트리스트 기능이 활성화되었습니다",
+  "whitelist.log-disabled": "화이트리스트 기능이 비활성화되었습니다",
+  "whitelist.log-loaded": "화이트리스트가 {{count}}개 항목으로 로드되었습니다",
+  "whitelist.log-created": "whitelist.json 파일을 생성했습니다",
+  "whitelist.log-reloaded": "파일에서 화이트리스트를 다시 로드했습니다",
+  "whitelist.log-player-joined": "플레이어 참가: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "플레이어 축출 (화이트리스트 미등록): {{player}}",
+  "whitelist.log-kick-executed": "축출 명령 실행: {{command}}",
+  
+  "whitelist.error-loading": "화이트리스트 로드 오류: {{error}}",
+  "whitelist.error-saving": "화이트리스트 저장 오류: {{error}}",
+  "whitelist.error-file-watcher": "파일 감시 설정 오류: {{error}}",
+  "whitelist.error-reload": "화이트리스트 재로드 오류: {{error}}",
+  "whitelist.error-checking": "화이트리스트 확인 오류: {{error}}",
+  "whitelist.error-kick": "플레이어 축출 오류: {{error}}",
+  
   "config.about.header": "정보",
   "config.about.repository": "소스 코드: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. MIT 라이선스로 라이선스됩니다."

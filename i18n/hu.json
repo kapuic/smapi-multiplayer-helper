@@ -87,6 +87,29 @@
   "debug.configure-manager-init": "AutoConfigureManager inicializálva",
   "debug.save-loaded-configure": "Mentés betöltve. Automatikus konfigurációs jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   
+  "config.whitelist.header": "Engedélylistázott Beállítások",
+  "config.whitelist.enabled": "Engedélylistázás Engedélyezése",
+  "config.whitelist.enabled.tooltip": "Csak az engedélylistán szereplő játékosoknak engedélyezi a szerverre csatlakozást.",
+  "config.whitelist.show-player-join-info": "Játékos Csatlakozási Információ Megjelenítése",
+  "config.whitelist.show-player-join-info.tooltip": "Játékos azonosítók megjelenítése a konzolban, amikor játékosok csatlakoznak.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager inicializálva",
+  "whitelist.log-enabled": "Engedélylistázás funkció engedélyezve",
+  "whitelist.log-disabled": "Engedélylistázás funkció letiltva",
+  "whitelist.log-loaded": "Engedélylista betöltve {{count}} bejegyzéssel",
+  "whitelist.log-created": "whitelist.json fájl létrehozva",
+  "whitelist.log-reloaded": "Engedélylista újratöltve fájlból",
+  "whitelist.log-player-joined": "Játékos csatlakozott: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Játékos kirúgva (nincs az engedélylistán): {{player}}",
+  "whitelist.log-kick-executed": "Kirúgás parancs végrehajtva: {{command}}",
+  
+  "whitelist.error-loading": "Engedélylista betöltési hiba: {{error}}",
+  "whitelist.error-saving": "Engedélylista mentési hiba: {{error}}",
+  "whitelist.error-file-watcher": "Fájlfigyelő beállítási hiba: {{error}}",
+  "whitelist.error-reload": "Engedélylista újratöltési hiba: {{error}}",
+  "whitelist.error-checking": "Engedélylista ellenőrzési hiba: {{error}}",
+  "whitelist.error-kick": "Játékos kirúgási hiba: {{error}}",
+  
   "config.about.header": "Névjegy",
   "config.about.repository": "Forráskód: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. MIT licenc alatt licencelésre került."

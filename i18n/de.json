@@ -88,6 +88,30 @@
   "debug.configure-manager-init": "AutoConfigureManager initialisiert",
   "debug.save-loaded-configure": "Speicher geladen. Auto-Konfigurations-Flag zurückgesetzt. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   
+  "config.whitelist.header": "Whitelist-Einstellungen",
+  "config.whitelist.setup-info": "Whitelist einrichten: Logging unten aktivieren, Spieler beitreten lassen um ihre Identifikatoren in der Konsole zu sehen, dann gewünschte Identifikatoren zur whitelist.json Datei hinzufügen.",
+  "config.whitelist.enabled": "Whitelist Aktivieren",
+  "config.whitelist.enabled.tooltip": "Nur Spieler auf der Whitelist dürfen dem Server beitreten.",
+  "config.whitelist.log-player-identifiers": "Spieler-Identifikatoren Protokollieren",
+  "config.whitelist.log-player-identifiers.tooltip": "Zeige Spieler-Identifikatoren in der Konsole an, um bei der Whitelist-Einrichtung zu helfen.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager initialisiert",
+  "whitelist.log-enabled": "Whitelist-Funktionalität aktiviert",
+  "whitelist.log-disabled": "Whitelist-Funktionalität deaktiviert",
+  "whitelist.log-loaded": "Whitelist geladen mit {{count}} Einträgen",
+  "whitelist.log-created": "Neue whitelist.json Datei erstellt",
+  "whitelist.log-reloaded": "Whitelist aus Datei neu geladen",
+  "whitelist.log-player-joined": "Spieler beigetreten: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Spieler gekickt (nicht auf Whitelist): {{player}}",
+  "whitelist.log-kick-executed": "Kick-Befehl ausgeführt: {{command}}",
+  
+  "whitelist.error-loading": "Fehler beim Laden der Whitelist: {{error}}",
+  "whitelist.error-saving": "Fehler beim Speichern der Whitelist: {{error}}",
+  "whitelist.error-file-watcher": "Fehler beim Einrichten des Whitelist-Datei-Watchers: {{error}}",
+  "whitelist.error-reload": "Fehler beim Neuladen der Whitelist: {{error}}",
+  "whitelist.error-checking": "Fehler beim Prüfen der Spieler-Whitelist: {{error}}",
+  "whitelist.error-kick": "Fehler beim Kicken des Spielers: {{error}}",
+  
   "config.about.header": "Über",
   "config.about.repository": "Quellcode: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Lizenziert unter MIT-Lizenz."

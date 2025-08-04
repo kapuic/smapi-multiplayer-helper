@@ -3,6 +3,7 @@
   "core.name": "Assistant Multijoueur",
   "core.description": "Copie auto codes d'invitation, raccourcis pause, whitelist et auto-configuration",
   "core.loaded": "Mod MultiplayerHelper chargé avec une architecture modulaire !",
+  "core.disabled": "Le mod MultiplayerHelper est désactivé dans la configuration",
   
   "invite.hud-copied": "Code d'invitation copié dans le presse-papiers : {{code}}",
   "invite.hud-manual": "Code d'invitation (copier manuellement) : {{code}}",
@@ -86,6 +87,30 @@
   
   "debug.configure-manager-init": "AutoConfigureManager initialisé",
   "debug.save-loaded-configure": "Sauvegarde chargée. Drapeau de configuration automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
+  
+  "config.whitelist.header": "Paramètres de Liste Blanche",
+  "config.whitelist.setup-info": "Pour configurer la liste blanche : Activez la journalisation ci-dessous, laissez les joueurs rejoindre pour voir leurs identifiants dans la console, puis ajoutez les identifiants désirés au fichier whitelist.json.",
+  "config.whitelist.enabled": "Activer la Liste Blanche",
+  "config.whitelist.enabled.tooltip": "Autoriser uniquement les joueurs de la liste blanche à rejoindre le serveur.",
+  "config.whitelist.log-player-identifiers": "Enregistrer les Identifiants de Joueurs",
+  "config.whitelist.log-player-identifiers.tooltip": "Afficher les identifiants des joueurs dans la console pour aider à configurer la liste blanche.",
+  
+  "debug.whitelist-manager-init": "WhitelistManager initialisé",
+  "whitelist.log-enabled": "Fonctionnalité de liste blanche activée",
+  "whitelist.log-disabled": "Fonctionnalité de liste blanche désactivée",
+  "whitelist.log-loaded": "Liste blanche chargée avec {{count}} entrées",
+  "whitelist.log-created": "Fichier whitelist.json créé",
+  "whitelist.log-reloaded": "Liste blanche rechargée depuis le fichier",
+  "whitelist.log-player-joined": "Joueur connecté : DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "Joueur expulsé (pas dans la liste blanche) : {{player}}",
+  "whitelist.log-kick-executed": "Commande d'expulsion exécutée : {{command}}",
+  
+  "whitelist.error-loading": "Erreur lors du chargement de la liste blanche : {{error}}",
+  "whitelist.error-saving": "Erreur lors de la sauvegarde de la liste blanche : {{error}}",
+  "whitelist.error-file-watcher": "Erreur lors de la configuration du surveillant de fichier : {{error}}",
+  "whitelist.error-reload": "Erreur lors du rechargement de la liste blanche : {{error}}",
+  "whitelist.error-checking": "Erreur lors de la vérification de la liste blanche : {{error}}",
+  "whitelist.error-kick": "Erreur lors de l'expulsion du joueur : {{error}}",
   
   "config.about.header": "À propos",
   "config.about.repository": "Code Source: github.com/kapuic/smapi-multiplayer-helper",

@@ -87,6 +87,30 @@
   "debug.configure-manager-init": "AutoConfigureManager已初始化",
   "debug.save-loaded-configure": "存档已加载。重置自动配置标志。IsMainPlayer：{{isMainPlayer}}，IsMultiplayer：{{isMultiplayer}}",
   
+  "config.whitelist.header": "白名单设置",
+  "config.whitelist.setup-info": "设置白名单：启用下方日志记录，让玩家加入以在控制台中查看他们的标识符，然后将所需标识符添加到whitelist.json文件中。",
+  "config.whitelist.enabled": "启用白名单",
+  "config.whitelist.enabled.tooltip": "仅允许白名单中的玩家加入服务器。",
+  "config.whitelist.log-player-identifiers": "记录玩家标识符",
+  "config.whitelist.log-player-identifiers.tooltip": "在玩家加入时在控制台显示玩家标识符以帮助您设置白名单。",
+  
+  "debug.whitelist-manager-init": "WhitelistManager已初始化",
+  "whitelist.log-enabled": "白名单功能已启用",
+  "whitelist.log-disabled": "白名单功能已禁用",
+  "whitelist.log-loaded": "白名单已加载，包含{{count}}个条目",
+  "whitelist.log-created": "已创建whitelist.json文件",
+  "whitelist.log-reloaded": "从文件重新加载白名单",
+  "whitelist.log-player-joined": "玩家加入：DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
+  "whitelist.log-player-kicked": "玩家被踢出（不在白名单中）：{{player}}",
+  "whitelist.log-kick-executed": "执行踢出命令：{{command}}",
+  
+  "whitelist.error-loading": "加载白名单错误：{{error}}",
+  "whitelist.error-saving": "保存白名单错误：{{error}}",
+  "whitelist.error-file-watcher": "设置文件监视器错误：{{error}}",
+  "whitelist.error-reload": "重新加载白名单错误：{{error}}",
+  "whitelist.error-checking": "检查白名单错误：{{error}}",
+  "whitelist.error-kick": "踢出玩家错误：{{error}}",
+  
   "config.about.header": "关于",
   "config.about.repository": "手砉秦：github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. 采用MIT许可证。"

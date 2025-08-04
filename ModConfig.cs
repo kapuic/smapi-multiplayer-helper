@@ -72,6 +72,16 @@ namespace MultiplayerHelper
         /// Gets or sets whether to automatically unban all players when configuring the map.
         /// </summary>
         public bool UnbanAllEnabled { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets whether whitelist functionality is enabled.
+        /// </summary>
+        public bool WhitelistEnabled { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets whether to show player join information in console with identifiers.
+        /// </summary>
+        public bool ShowPlayerJoinInfo { get; set; } = true;
     }
 
     /// <summary>
@@ -130,5 +140,26 @@ namespace MultiplayerHelper
         /// Farmhands can move all buildings.
         /// </summary>
         On
+    }
+
+    /// <summary>
+    /// Defines the available player identifier types for whitelisting.
+    /// </summary>
+    public enum PlayerIdentifierType
+    {
+        /// <summary>
+        /// Use the player's display name (Farmer.Name).
+        /// </summary>
+        DisplayName,
+
+        /// <summary>
+        /// Use the player's unique multiplayer ID (Farmer.UniqueMultiplayerID).
+        /// </summary>
+        UniqueId,
+
+        /// <summary>
+        /// Use the peer connection ID (IMultiplayerPeer.PlayerID).
+        /// </summary>
+        PeerId
     }
 }
