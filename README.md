@@ -22,6 +22,13 @@ A comprehensive SMAPI mod that enhances your multiplayer hosting experience with
 - **Auto-unban players** - Optionally unban all players when configuring
 - **Disabled by default** - Enable only when needed
 
+### 🛡️ **Player Whitelist System**
+- **JSON-based whitelist** - Control who can join your server with whitelist.json
+- **Three identification methods** - DisplayName, UniqueID, and PeerID support
+- **Auto-kick non-whitelisted players** - Automatic enforcement
+- **Setup assistance** - Log player identifiers to help configure whitelist
+- **Hot-reload support** - Changes apply immediately when file is modified
+
 ### 🌍 **Full Localization**
 - **12 languages supported**: English, German, Spanish, French, Portuguese, Russian, Japanese, Korean, Chinese, Italian, Turkish, Hungarian
 - **GMCM integration** - Full Generic Mod Config Menu support with organized sections
@@ -56,11 +63,14 @@ A comprehensive SMAPI mod that enhances your multiplayer hosting experience with
 - **Key features**: Toggle any feature, customize keybinds, set log levels
 
 ### Server Management (Optional)
-- Enable auto-configure in mod settings
-- Automatically runs console commands when hosting:
+- **Auto-configure**: Enable in mod settings to automatically run console commands:
   - `sleepAnnounceMode [off/first/all]`
   - `moveBuildingPermission [off/owned/on]`
   - `unbanAll` (if enabled)
+- **Whitelist**: Enable player whitelist system:
+  - Create/edit `whitelist.json` in mod folder
+  - Add player DisplayNames, UniqueIDs, or PeerIDs
+  - Enable "Log Player Identifiers" to see player info in console
 
 ## 🔧 Configuration Options
 
@@ -74,6 +84,8 @@ A comprehensive SMAPI mod that enhances your multiplayer hosting experience with
 | **PauseMethod** | `Chatbox` | Pause method (Direct/Chatbox) |
 | **PauseToggleKey** | `P` | Configurable pause toggle keybind |
 | **AutoConfigureEnabled** | `false` | Enable server auto-configuration |
+| **WhitelistEnabled** | `false` | Enable player whitelist system |
+| **LogPlayerIdentifiers** | `true` | Log player IDs to help setup whitelist |
 
 ## 🛠️ Building from Source
 
@@ -92,12 +104,6 @@ dotnet build
 - **Platforms**: Windows, Mac, Linux
 - **Optional**: Generic Mod Config Menu for GUI configuration
 - **Multiplayer**: Full host and farmhand compatibility
-
-## 🔮 Upcoming Features
-
-- **Player whitelist system** - Control who can join your server
-- **Advanced server management tools**
-- **More automation options**
 
 ## 🤝 Contributing
 
