@@ -1,0 +1,8 @@
+# Exclude GitHub workflows to avoid permission issues
+.github/workflows/
+.github/
+# Exclude build outputs
+bin/
+obj/
+# Exclude git files
+.git/

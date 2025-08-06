@@ -18,6 +18,6 @@
     </PackageReference>
   </ItemGroup>
 
-  <Import Project="stardewvalley.targets" />
+  <Import Project="stardewvalley.targets" Condition="Exists('stardewvalley.targets')" />
 
 </Project>

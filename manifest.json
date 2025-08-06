@@ -3,7 +3,7 @@
   "Author": "Ka Pui Cheung",
   "Version": "1.0.0",
   "Description": "A comprehensive SMAPI mod that enhances multiplayer hosting with auto-copy invite codes, smart pause system, server auto-configuration, and full Generic Mod Config Menu support with 12 languages",
-  "UniqueID": "KaPuiCheung.MultiplayerHelper",
+  "UniqueID": "KaPui.MultiplayerHelper",
   "EntryDll": "MultiplayerHelper.dll",
   "MinimumApiVersion": "4.0.0",
   "UpdateKeys": []

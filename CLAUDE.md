@@ -96,17 +96,15 @@ See `docs/translation-key-design.md` for complete key catalog.
 3. Consider impact on all supported languages
 4. Update `docs/translation-key-design.md` if needed
 
-## Build and CI/CD
+## Build and Development
 
-### Automated Processes
-- **GitHub Actions** - CI/CD pipeline in `.github/workflows/`
+### Development Tools
 - **VS Code** - Tasks and debug configuration in `.vscode/`
 - **Formatting** - StyleCop + EditorConfig for code style
 - **Auto-build** - File watcher with `watch-build.sh`
 
 ### Quality Checks
-- Build validation on all PRs
-- Code formatting enforcement
+- Code formatting via StyleCop analyzers
 - Analyzer warnings (StyleCop + Microsoft.CodeAnalysis.NetAnalyzers)
 
 ---
