@@ -3,44 +3,44 @@
   "core.description": "Otomatik davet kodu kopyalama, duraklat kısayolları, whitelist ve otomatik yapılandırma",
   "core.loaded": "MultiplayerHelper modu modüler mimari ile yüklendi!",
   "core.disabled": "MultiplayerHelper modu yapılandırmada devre dışı bırakıldı",
-  
+
   "invite.hud-copied": "Davet kodu panoya kopyalandı: {{code}}",
   "invite.hud-manual": "Davet kodu (manuel kopyala): {{code}}",
-  
+
   "invite.log-detecting": "Sunucu tespit edildi! Davet kodu alınmaya çalışılıyor...",
   "invite.log-found": "getInviteCode metodu ile davet kodu bulundu: {{code}}",
   "invite.log-copied": "Davet kodu panoya kopyalandı: {{code}}",
   "invite.log-unavailable": "Davet kodu henüz mevcut değil",
-  
+
   "invite.error-clipboard": "Panoya kopyalarken hata: {{error}}",
   "invite.error-detection": "Davet kodu alırken hata: {{error}}",
-  
+
   "pause.hud-paused-direct": "Oyun duraklatıldı - Devam etmek için P'ye basın",
   "pause.hud-resumed": "Oyun devam ettirildi",
   "pause.hud-paused-manual": "Oyun duraklatıldı",
-  
+
   "pause.log-auto-direct": "Doğrudan duraklat yöntemi ile oyun otomatik durakladı (devam etmek için P'ye basın)",
   "pause.log-auto-chatbox": "Sohbet kutusu aracılığıyla /pause komutu gönderildi",
   "pause.log-manual-resumed": "P'ye basarak oyun devam ettirildi",
   "pause.log-manual-paused": "P'ye basarak oyun duraklatıldı",
   "pause.log-already-paused": "Oyun zaten duraklatılmış",
   "pause.log-player-connected": "{{playerName}} oyuncusu oyuna bağlandı",
-  
+
   "pause.error-failed": "Oyunu otomatik duraklatırken hata: {{error}}",
   "pause.error-chatbox-unavailable": "Sohbet kutusu henüz mevcut değil",
-  
+
   "debug.invite-manager-init": "InviteCodeManager başlatıldı",
   "debug.pause-manager-init": "AutoPauseManager başlatıldı (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Oyun başlatıldı, bileşenler yapılandırılıyor...",
   "debug.save-loaded-invite": "Kayıt yüklendi. Ana bilgisayar oturum bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "Kayıt yüklendi. Otomatik duraklat bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "Genel Ayarlar",
   "config.general.mod-enabled": "Mod'u Etkinleştir",
   "config.general.mod-enabled.tooltip": "Tüm mod işlevlerini etkinleştir veya devre dışı bırak.",
   "config.general.log-level": "Günlük Seviyesi",
   "config.general.log-level.tooltip": "Ne kadar bilgi günlüğe kaydedilecek.",
-  
+
   "config.invite.header": "Davet Kodu Ayarları",
   "config.invite.enabled": "Davet Kodlarını Otomatik Kopyala",
   "config.invite.enabled.tooltip": "Çok oyunculu davet kodlarını panoya otomatik olarak kopyala.",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "Davet kodu kopyalandığında bildirim göster.",
   "config.invite.show-manual-copy-message": "Manuel Kopyalama Mesajlarını Göster",
   "config.invite.show-manual-copy-message.tooltip": "Pano başarısız olduğunda manuel kopyalama mesajı göster.",
-  
+
   "config.pause.header": "Duraklat Ayarları",
   "config.pause.enabled": "Hostlarken Otomatik Duraklat",
   "config.pause.enabled.tooltip": "Çok oyunculu oturum host etmeye başladığınızda oyunu otomatik duraklat.",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "Yapılandırılabilir tuş ile manuel duraklat/devam ettirmeye izin ver.",
   "config.pause.toggle-key": "Duraklat Değiştirme Tuşu",
   "config.pause.toggle-key.tooltip": "Oyunu manuel olarak duraklatmak/devam ettirmek için tuş kombinasyonu.",
-  
+
   "config.configure.header": "Otomatik Yapılandırma Ayarları",
   "config.configure.enabled": "Otomatik Yapılandırmayı Etkinleştir",
   "config.configure.enabled.tooltip": "Çok oyunculu oyun barındırırken harita ayarlarını otomatik olarak yapılandır.",
@@ -76,24 +76,24 @@
   "config.configure.move-building-permission-on": "Açık (Tüm Binalar)",
   "config.configure.unban-all": "Tüm Oyuncuları Otomatik Yasak Kaldır",
   "config.configure.unban-all.tooltip": "Harita yapılandırırken tüm oyuncuların yasağını otomatik olarak kaldır.",
-  
+
   "configure.log-attempting": "Harita ayarlarını otomatik yapılandırma deneniyor...",
   "configure.log-completed": "Harita otomatik yapılandırması başarıyla tamamlandı",
   "configure.log-command-executed": "Komut çalıştırıldı: {{command}}",
   "configure.error-failed": "Harita otomatik yapılandırması sırasında hata: {{error}}",
   "configure.error-chatbox-unavailable": "Komut yürütme için sohbet kutusu mevcut değil",
   "configure.error-command-failed": "{{command}} {{parameter}} komutunu çalıştırma hatası: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager başlatıldı",
   "debug.save-loaded-configure": "Kayıt yüklendi. Otomatik yapılandırma bayrağı sıfırlandı. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "Beyaz Liste Ayarları",
   "config.whitelist.setup-info": "Beyaz liste kurulumu: Aşağıdaki günlüğü etkinleştirin, oyuncuların katılmasına izin verin ve konsolda tanımlayıcılarını görün, sonra istenen tanımlayıcıları whitelist.json dosyasına ekleyin.",
   "config.whitelist.enabled": "Beyaz Liste Etkinleştir",
   "config.whitelist.enabled.tooltip": "Sadece beyaz listedeki oyuncuların sunucuya katılmasına izin ver.",
   "config.whitelist.log-player-identifiers": "Oyuncu Tanımlayıcıları Günlüğü",
   "config.whitelist.log-player-identifiers.tooltip": "Beyaz liste kurulumunda yardımcı olmak için oyuncular katıldığında konsolda tanımlayıcıları göster.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager başlatıldı",
   "whitelist.log-enabled": "Beyaz liste işlevliği etkinleştirildi",
   "whitelist.log-disabled": "Beyaz liste işlevliği devre dışı bırakıldı",
@@ -103,14 +103,14 @@
   "whitelist.log-player-joined": "Oyuncu katıldı: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "Oyuncu atıldı (beyaz listede değil): {{player}}",
   "whitelist.log-kick-executed": "Atma komutu çalıştırıldı: {{command}}",
-  
+
   "whitelist.error-loading": "Beyaz liste yükleme hatası: {{error}}",
   "whitelist.error-saving": "Beyaz liste kaydetme hatası: {{error}}",
   "whitelist.error-file-watcher": "Dosya izleyici kurulum hatası: {{error}}",
   "whitelist.error-reload": "Beyaz liste yeniden yükleme hatası: {{error}}",
   "whitelist.error-checking": "Beyaz liste kontrol hatası: {{error}}",
   "whitelist.error-kick": "Oyuncu atma hatası: {{error}}",
-  
+
   "config.about.header": "Hakkında",
   "config.about.repository": "Kaynak Kodu: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. MIT Lisansı altında lisanslanmıştır."

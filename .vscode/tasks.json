@@ -21,11 +21,7 @@
       "label": "watch",
       "command": "dotnet",
       "type": "process",
-      "args": [
-        "watch",
-        "build",
-        "${workspaceFolder}/MultiplayerHelper.sln"
-      ],
+      "args": ["watch", "build", "${workspaceFolder}/MultiplayerHelper.sln"],
       "group": "build",
       "presentation": {
         "reveal": "always"
@@ -36,10 +32,7 @@
       "label": "format",
       "command": "dotnet",
       "type": "process",
-      "args": [
-        "format",
-        "${workspaceFolder}/MultiplayerHelper.sln"
-      ],
+      "args": ["format", "${workspaceFolder}/MultiplayerHelper.sln"],
       "group": "build",
       "presentation": {
         "reveal": "always"

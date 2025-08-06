@@ -1,10 +1,14 @@
-using System;
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
-using StardewValley;
+// <copyright file="AutoPauseManager.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MultiplayerHelper.Components
 {
+    using System;
+    using StardewModdingAPI;
+    using StardewModdingAPI.Events;
+    using StardewValley;
+
     /// <summary>
     /// Manages automatic game pausing functionality when the host joins multiplayer.
     /// </summary>
@@ -24,12 +28,12 @@ namespace MultiplayerHelper.Components
         }
 
         /// <summary>
-        /// Gets or sets whether to use direct pause method instead of chatbox method.
+        /// Gets or sets a value indicating whether gets or sets whether to use direct pause method instead of chatbox method.
         /// </summary>
         public bool UseDirectPause
         {
-            get => useDirectPause;
-            set => useDirectPause = value;
+            get => this.useDirectPause;
+            set => this.useDirectPause = value;
         }
 
         /// <summary>
@@ -37,19 +41,21 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Initialize()
         {
-            if (!config.AutoPauseEnabled)
-                return;
-                
-            helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
-            helper.Events.Player.Warped += OnPlayerWarped;
-            helper.Events.Multiplayer.PeerConnected += OnPeerConnected;
-            
-            if (config.EnableManualToggle)
+            if (!this.config.AutoPauseEnabled)
             {
-                helper.Events.Input.ButtonPressed += OnButtonPressed;
+                return;
             }
-            
-            monitor.Log(helper.Translation.Get("debug.pause-manager-init", new { useDirectPause = useDirectPause }), config.LogLevel);
+
+            this.helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
+            this.helper.Events.Player.Warped += this.OnPlayerWarped;
+            this.helper.Events.Multiplayer.PeerConnected += this.OnPeerConnected;
+
+            if (this.config.EnableManualToggle)
+            {
+                this.helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+            }
+
+            this.monitor.Log(this.helper.Translation.Get("debug.pause-manager-init", new { useDirectPause = this.useDirectPause }), this.config.LogLevel);
         }
 
         /// <summary>
@@ -57,43 +63,44 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Dispose()
         {
-            helper.Events.GameLoop.SaveLoaded -= OnSaveLoaded;
-            helper.Events.Player.Warped -= OnPlayerWarped;
-            helper.Events.Multiplayer.PeerConnected -= OnPeerConnected;
-            if (config.EnableManualToggle)
+            this.helper.Events.GameLoop.SaveLoaded -= this.OnSaveLoaded;
+            this.helper.Events.Player.Warped -= this.OnPlayerWarped;
+            this.helper.Events.Multiplayer.PeerConnected -= this.OnPeerConnected;
+            if (this.config.EnableManualToggle)
             {
-                helper.Events.Input.ButtonPressed -= OnButtonPressed;
+                this.helper.Events.Input.ButtonPressed -= this.OnButtonPressed;
             }
         }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
-            hasAutoPaused = false;
-            monitor.Log(helper.Translation.Get("debug.save-loaded-pause", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), config.LogLevel);
+            this.hasAutoPaused = false;
+            this.monitor.Log(this.helper.Translation.Get("debug.save-loaded-pause", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), this.config.LogLevel);
 
             // Auto-pause immediately when hosting multiplayer
             if (Context.IsMainPlayer && Context.IsMultiplayer)
             {
-                helper.Events.GameLoop.OneSecondUpdateTicked += OnOneSecondUpdateTickedForPause;
+                this.helper.Events.GameLoop.OneSecondUpdateTicked += this.OnOneSecondUpdateTickedForPause;
             }
         }
 
         private void OnPlayerWarped(object sender, WarpedEventArgs e)
         {
-            if (Context.IsMainPlayer && Context.IsMultiplayer && !hasAutoPaused && e.IsLocalPlayer)
+            if (Context.IsMainPlayer && Context.IsMultiplayer && !this.hasAutoPaused && e.IsLocalPlayer)
             {
-                AutoPauseGame();
+                this.AutoPauseGame();
             }
         }
 
         private void OnOneSecondUpdateTickedForPause(object sender, OneSecondUpdateTickedEventArgs e)
         {
             // Auto-pause when the game is ready and we haven't paused yet
-            if (!hasAutoPaused && Context.IsPlayerFree)
+            if (!this.hasAutoPaused && Context.IsPlayerFree)
             {
-                AutoPauseGame();
+                this.AutoPauseGame();
+
                 // Unsubscribe after pausing
-                helper.Events.GameLoop.OneSecondUpdateTicked -= OnOneSecondUpdateTickedForPause;
+                this.helper.Events.GameLoop.OneSecondUpdateTicked -= this.OnOneSecondUpdateTickedForPause;
             }
         }
 
@@ -101,11 +108,11 @@ namespace MultiplayerHelper.Components
         {
             try
             {
-                monitor.Log($"Attempting to auto-pause. Game paused: {Game1.paused}, Should time pass: {Game1.shouldTimePass()}", LogLevel.Debug);
+                this.monitor.Log($"Attempting to auto-pause. Game paused: {Game1.paused}, Should time pass: {Game1.shouldTimePass()}", LogLevel.Debug);
 
                 if (!Game1.paused && Game1.shouldTimePass())
                 {
-                    if (useDirectPause)
+                    if (this.useDirectPause)
                     {
                         // Stop player movement before pausing
                         Game1.player.Halt();
@@ -113,10 +120,10 @@ namespace MultiplayerHelper.Components
 
                         // Direct pause method (may conflict with other mods)
                         Game1.paused = true;
-                        hasAutoPaused = true;
+                        this.hasAutoPaused = true;
 
-                        Game1.addHUDMessage(new HUDMessage(helper.Translation.Get("pause.hud-paused-direct"), HUDMessage.achievement_type));
-                        monitor.Log(helper.Translation.Get("pause.log-auto-direct"), LogLevel.Info);
+                        Game1.addHUDMessage(new HUDMessage(this.helper.Translation.Get("pause.hud-paused-direct"), HUDMessage.achievement_type));
+                        this.monitor.Log(this.helper.Translation.Get("pause.log-auto-direct"), LogLevel.Info);
                     }
                     else
                     {
@@ -126,25 +133,25 @@ namespace MultiplayerHelper.Components
                             Game1.chatBox.activate();
                             Game1.chatBox.setText("/pause");
                             Game1.chatBox.textBoxEnter(Game1.chatBox.chatBox);
-                            hasAutoPaused = true;
+                            this.hasAutoPaused = true;
 
-                            monitor.Log(helper.Translation.Get("pause.log-auto-chatbox"), LogLevel.Info);
+                            this.monitor.Log(this.helper.Translation.Get("pause.log-auto-chatbox"), LogLevel.Info);
                         }
                         else
                         {
-                            monitor.Log(helper.Translation.Get("pause.error-chatbox-unavailable"), LogLevel.Debug);
+                            this.monitor.Log(this.helper.Translation.Get("pause.error-chatbox-unavailable"), LogLevel.Debug);
                         }
                     }
                 }
                 else if (Game1.paused)
                 {
-                    monitor.Log(helper.Translation.Get("pause.log-already-paused"), LogLevel.Debug);
-                    hasAutoPaused = true;
+                    this.monitor.Log(this.helper.Translation.Get("pause.log-already-paused"), LogLevel.Debug);
+                    this.hasAutoPaused = true;
                 }
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("pause.error-failed", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("pause.error-failed", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -152,23 +159,23 @@ namespace MultiplayerHelper.Components
         {
             if (Context.IsMainPlayer)
             {
-                monitor.Log(helper.Translation.Get("pause.log-player-connected", new { playerName = e.Peer.PlayerID }), LogLevel.Debug);
+                this.monitor.Log(this.helper.Translation.Get("pause.log-player-connected", new { playerName = e.Peer.PlayerID }), LogLevel.Debug);
             }
         }
 
         private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
         {
             // Check if player pressed the configured keybind to toggle pause (only in multiplayer as host)
-            if (Context.IsWorldReady && Context.IsMainPlayer && Context.IsMultiplayer && config.PauseToggleKey.JustPressed())
+            if (Context.IsWorldReady && Context.IsMainPlayer && Context.IsMultiplayer && this.config.PauseToggleKey.JustPressed())
             {
                 if (Game1.paused)
                 {
                     // Resume the game
                     Game1.paused = false;
-                    Game1.addHUDMessage(new HUDMessage(helper.Translation.Get("pause.hud-resumed"), HUDMessage.achievement_type));
-                    monitor.Log(helper.Translation.Get("pause.log-manual-resumed"), LogLevel.Info);
+                    Game1.addHUDMessage(new HUDMessage(this.helper.Translation.Get("pause.hud-resumed"), HUDMessage.achievement_type));
+                    this.monitor.Log(this.helper.Translation.Get("pause.log-manual-resumed"), LogLevel.Info);
                 }
-                else if (useDirectPause)
+                else if (this.useDirectPause)
                 {
                     // Stop player movement before pausing
                     Game1.player.Halt();
@@ -176,8 +183,8 @@ namespace MultiplayerHelper.Components
 
                     // Pause the game using direct method
                     Game1.paused = true;
-                    Game1.addHUDMessage(new HUDMessage(helper.Translation.Get("pause.hud-paused-manual"), HUDMessage.achievement_type));
-                    monitor.Log(helper.Translation.Get("pause.log-manual-paused"), LogLevel.Info);
+                    Game1.addHUDMessage(new HUDMessage(this.helper.Translation.Get("pause.hud-paused-manual"), HUDMessage.achievement_type));
+                    this.monitor.Log(this.helper.Translation.Get("pause.log-manual-paused"), LogLevel.Info);
                 }
             }
         }

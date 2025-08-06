@@ -3,44 +3,44 @@
   "core.description": "Авто-копия кодов приглашения, сочетания паузы, whitelist и авто-конфигурация",
   "core.loaded": "Мод MultiplayerHelper загружен с модульной архитектурой!",
   "core.disabled": "MultiplayerHelper мод отключен в конфигурации",
-  
+
   "invite.hud-copied": "Код приглашения скопирован в буфер обмена: {{code}}",
   "invite.hud-manual": "Код приглашения (скопировать вручную): {{code}}",
-  
+
   "invite.log-detecting": "Сервер обнаружен! Попытка получить код приглашения...",
   "invite.log-found": "Код приглашения найден через метод getInviteCode: {{code}}",
   "invite.log-copied": "Код приглашения скопирован в буфер обмена: {{code}}",
   "invite.log-unavailable": "Код приглашения пока недоступен",
-  
+
   "invite.error-clipboard": "Ошибка копирования в буфер обмена: {{error}}",
   "invite.error-detection": "Ошибка получения кода приглашения: {{error}}",
-  
+
   "pause.hud-paused-direct": "Игра приостановлена - Нажмите P для продолжения",
   "pause.hud-resumed": "Игра возобновлена",
   "pause.hud-paused-manual": "Игра приостановлена",
-  
+
   "pause.log-auto-direct": "Игра автоматически приостановлена прямым методом (нажмите P для продолжения)",
   "pause.log-auto-chatbox": "Команда /pause отправлена через чат",
   "pause.log-manual-resumed": "Игра возобновлена нажатием P",
   "pause.log-manual-paused": "Игра приостановлена нажатием P",
   "pause.log-already-paused": "Игра уже приостановлена",
   "pause.log-player-connected": "Игрок {{playerName}} присоединился к игре",
-  
+
   "pause.error-failed": "Ошибка автоматической приостановки игры: {{error}}",
   "pause.error-chatbox-unavailable": "Чат пока недоступен",
-  
+
   "debug.invite-manager-init": "InviteCodeManager инициализирован",
   "debug.pause-manager-init": "AutoPauseManager инициализирован (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Игра запущена, настройка компонентов...",
   "debug.save-loaded-invite": "Сохранение загружено. Флаг хостинг-сессии сброшен. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "Сохранение загружено. Флаг автопаузы сброшен. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "Общие Настройки",
   "config.general.mod-enabled": "Включить Мод",
   "config.general.mod-enabled.tooltip": "Включить или отключить всю функциональность мода.",
   "config.general.log-level": "Уровень Логирования",
   "config.general.log-level.tooltip": "Установить количество информации для логирования.",
-  
+
   "config.invite.header": "Настройки Кодов Приглашения",
   "config.invite.enabled": "Автокопирование Кодов Приглашения",
   "config.invite.enabled.tooltip": "Автоматически копировать коды приглашения мультиплеера в буфер обмена.",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "Отображать уведомление при копировании кода приглашения.",
   "config.invite.show-manual-copy-message": "Показывать Сообщения Ручного Копирования",
   "config.invite.show-manual-copy-message.tooltip": "Показывать сообщение ручного копирования при сбое буфера обмена.",
-  
+
   "config.pause.header": "Настройки Паузы",
   "config.pause.enabled": "Авто-Пауза При Хостинге",
   "config.pause.enabled.tooltip": "Автоматически ставить игру на паузу, когда вы начинаете хостить мультиплеер сессию.",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "Разрешить ручную паузу/возобновление настраиваемой клавишей.",
   "config.pause.toggle-key": "Клавиша Переключения Паузы",
   "config.pause.toggle-key.tooltip": "Комбинация клавиш для ручной паузы/возобновления игры.",
-  
+
   "config.configure.header": "Настройки Автоконфигурации",
   "config.configure.enabled": "Включить Автоконфигурацию",
   "config.configure.enabled.tooltip": "Автоматически настраивать параметры карты при хостинге мультиплеера.",
@@ -76,24 +76,24 @@
   "config.configure.move-building-permission-on": "Включено (Все Здания)",
   "config.configure.unban-all": "Автоматически Разбанить Всех Игроков",
   "config.configure.unban-all.tooltip": "Автоматически разбанить всех игроков при настройке карты.",
-  
+
   "configure.log-attempting": "Попытка автоматической настройки параметров карты...",
   "configure.log-completed": "Автоконфигурация карты успешно завершена",
   "configure.log-command-executed": "Выполнена команда: {{command}}",
   "configure.error-failed": "Ошибка при автоконфигурации карты: {{error}}",
   "configure.error-chatbox-unavailable": "Чат недоступен для выполнения команд",
   "configure.error-command-failed": "Ошибка выполнения команды {{command}} {{parameter}}: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager инициализирован",
   "debug.save-loaded-configure": "Сохранение загружено. Флаг автоконфигурации сброшен. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "Настройки Белого Списка",
   "config.whitelist.setup-info": "Настройка белого списка: Включите логирование ниже, пусть игроки подключатся чтобы увидеть их идентификаторы в консоли, затем добавьте нужные идентификаторы в файл whitelist.json.",
   "config.whitelist.enabled": "Включить Белый Список",
   "config.whitelist.enabled.tooltip": "Разрешить подключение только игрокам из белого списка.",
   "config.whitelist.log-player-identifiers": "Записывать Идентификаторы Игроков",
   "config.whitelist.log-player-identifiers.tooltip": "Отображать идентификаторы игроков в консоли для помощи в настройке белого списка.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager инициализирован",
   "whitelist.log-enabled": "Функциональность белого списка включена",
   "whitelist.log-disabled": "Функциональность белого списка отключена",
@@ -103,14 +103,14 @@
   "whitelist.log-player-joined": "Игрок подключился: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "Игрок исключен (не в белом списке): {{player}}",
   "whitelist.log-kick-executed": "Выполнена команда исключения: {{command}}",
-  
+
   "whitelist.error-loading": "Ошибка загрузки белого списка: {{error}}",
   "whitelist.error-saving": "Ошибка сохранения белого списка: {{error}}",
   "whitelist.error-file-watcher": "Ошибка настройки наблюдателя файла: {{error}}",
   "whitelist.error-reload": "Ошибка перезагрузки белого списка: {{error}}",
   "whitelist.error-checking": "Ошибка проверки белого списка: {{error}}",
   "whitelist.error-kick": "Ошибка исключения игрока: {{error}}",
-  
+
   "config.about.header": "О моде",
   "config.about.repository": "Исходный код: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Лицензия MIT."

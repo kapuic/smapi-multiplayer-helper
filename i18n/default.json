@@ -1,47 +1,46 @@
 {
-  
   "core.name": "Multiplayer Helper",
   "core.description": "Auto-copy invite codes, pause shortcuts, whitelist, and auto-configuration",
   "core.loaded": "MultiplayerHelper mod loaded with modular architecture!",
   "core.disabled": "MultiplayerHelper mod is disabled in config",
-  
+
   "invite.hud-copied": "Invite code copied to clipboard: {{code}}",
   "invite.hud-manual": "Invite code (copy manually): {{code}}",
-  
+
   "invite.log-detecting": "Server detected! Attempting to get invite code...",
   "invite.log-found": "Found invite code via getInviteCode method: {{code}}",
   "invite.log-copied": "Copied invite code to clipboard: {{code}}",
   "invite.log-unavailable": "No invite code available yet",
-  
+
   "invite.error-clipboard": "Error copying to clipboard: {{error}}",
   "invite.error-detection": "Error getting invite code: {{error}}",
-  
+
   "pause.hud-paused-direct": "Game paused - Press P to resume",
   "pause.hud-resumed": "Game resumed",
   "pause.hud-paused-manual": "Game paused",
-  
+
   "pause.log-auto-direct": "Auto-paused game using direct pause method (press P to resume)",
   "pause.log-auto-chatbox": "Sent /pause command via chatbox",
   "pause.log-manual-resumed": "Game resumed by pressing P",
   "pause.log-manual-paused": "Game paused by pressing P",
   "pause.log-already-paused": "Game is already paused",
   "pause.log-player-connected": "Player {{playerName}} connected to the game",
-  
+
   "pause.error-failed": "Error auto-pausing game: {{error}}",
   "pause.error-chatbox-unavailable": "Chatbox not available yet",
-  
+
   "debug.invite-manager-init": "InviteCodeManager initialized",
   "debug.pause-manager-init": "AutoPauseManager initialized (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Game launched, configuring components...",
   "debug.save-loaded-invite": "Save loaded. Reset hosted session flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "Save loaded. Reset auto-pause flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "General Settings",
   "config.general.mod-enabled": "Enable Mod",
   "config.general.mod-enabled.tooltip": "Enable or disable all mod functionality.",
   "config.general.log-level": "Log Level",
   "config.general.log-level.tooltip": "Set how much information to log.",
-  
+
   "config.invite.header": "Invite Code Settings",
   "config.invite.enabled": "Auto-Copy Invite Codes",
   "config.invite.enabled.tooltip": "Automatically copy multiplayer invite codes to clipboard.",
@@ -49,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "Display notification when invite code is copied.",
   "config.invite.show-manual-copy-message": "Show Manual Copy Messages",
   "config.invite.show-manual-copy-message.tooltip": "Show manual copy message when clipboard fails.",
-  
+
   "config.pause.header": "Pause Settings",
   "config.pause.enabled": "Auto-Pause When Hosting",
   "config.pause.enabled.tooltip": "Automatically pause game when you start hosting a multiplayer session.",
@@ -61,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "Allow manual pause/resume with configurable key.",
   "config.pause.toggle-key": "Pause Toggle Key",
   "config.pause.toggle-key.tooltip": "Key combination to manually pause/resume the game.",
-  
+
   "config.configure.header": "Auto-Configure Settings",
   "config.configure.enabled": "Enable Auto-Configure",
   "config.configure.enabled.tooltip": "Automatically configure map settings when hosting multiplayer.",
@@ -77,24 +76,24 @@
   "config.configure.move-building-permission-on": "On (All Buildings)",
   "config.configure.unban-all": "Auto Unban All Players",
   "config.configure.unban-all.tooltip": "Automatically unban all players when configuring the map.",
-  
+
   "configure.log-attempting": "Attempting to auto-configure map settings...",
   "configure.log-completed": "Map auto-configuration completed successfully",
   "configure.log-command-executed": "Executed command: {{command}}",
   "configure.error-failed": "Error during map auto-configuration: {{error}}",
   "configure.error-chatbox-unavailable": "Chatbox not available for command execution",
   "configure.error-command-failed": "Error executing command {{command}} {{parameter}}: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager initialized",
   "debug.save-loaded-configure": "Save loaded. Reset auto-configure flag. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "Whitelist Settings",
   "config.whitelist.setup-info": "To set up whitelist: Enable logging below, let players join to see their identifiers in console, then add desired identifiers to whitelist.json file.",
   "config.whitelist.enabled": "Enable Whitelist",
   "config.whitelist.enabled.tooltip": "Only allow whitelisted players to join the server.",
   "config.whitelist.log-player-identifiers": "Log Player Identifiers",
   "config.whitelist.log-player-identifiers.tooltip": "Display player identifiers in console when players join to help you set up the whitelist.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager initialized",
   "whitelist.log-enabled": "Whitelist functionality enabled",
   "whitelist.log-disabled": "Whitelist functionality disabled",
@@ -104,14 +103,14 @@
   "whitelist.log-player-joined": "Player joined: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "Player kicked (not whitelisted): {{player}}",
   "whitelist.log-kick-executed": "Executed kick command: {{command}}",
-  
+
   "whitelist.error-loading": "Error loading whitelist: {{error}}",
   "whitelist.error-saving": "Error saving whitelist: {{error}}",
   "whitelist.error-file-watcher": "Error setting up whitelist file watcher: {{error}}",
   "whitelist.error-reload": "Error reloading whitelist: {{error}}",
   "whitelist.error-checking": "Error checking player whitelist: {{error}}",
   "whitelist.error-kick": "Error kicking player: {{error}}",
-  
+
   "config.about.header": "About",
   "config.about.repository": "Source Code: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Licensed under MIT License."

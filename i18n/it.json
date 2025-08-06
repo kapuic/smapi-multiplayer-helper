@@ -3,44 +3,44 @@
   "core.description": "Copia automatica codici invito, scorciatoie pausa, whitelist e auto-configurazione",
   "core.loaded": "Mod MultiplayerHelper caricata con architettura modulare!",
   "core.disabled": "La mod MultiplayerHelper è disabilitata nella configurazione",
-  
+
   "invite.hud-copied": "Codice di invito copiato negli appunti: {{code}}",
   "invite.hud-manual": "Codice di invito (copia manualmente): {{code}}",
-  
+
   "invite.log-detecting": "Server rilevato! Tentativo di ottenere il codice di invito...",
   "invite.log-found": "Codice di invito trovato tramite metodo getInviteCode: {{code}}",
   "invite.log-copied": "Codice di invito copiato negli appunti: {{code}}",
   "invite.log-unavailable": "Codice di invito non ancora disponibile",
-  
+
   "invite.error-clipboard": "Errore nella copia negli appunti: {{error}}",
   "invite.error-detection": "Errore nell'ottenere il codice di invito: {{error}}",
-  
+
   "pause.hud-paused-direct": "Gioco in pausa - Premi P per riprendere",
   "pause.hud-resumed": "Gioco ripreso",
   "pause.hud-paused-manual": "Gioco in pausa",
-  
+
   "pause.log-auto-direct": "Gioco auto-pausato usando il metodo di pausa diretto (premi P per riprendere)",
   "pause.log-auto-chatbox": "Comando /pause inviato tramite chatbox",
   "pause.log-manual-resumed": "Gioco ripreso premendo P",
   "pause.log-manual-paused": "Gioco messo in pausa premendo P",
   "pause.log-already-paused": "Il gioco è già in pausa",
   "pause.log-player-connected": "Giocatore {{playerName}} connesso al gioco",
-  
+
   "pause.error-failed": "Errore nella messa in pausa automatica del gioco: {{error}}",
   "pause.error-chatbox-unavailable": "Chatbox non ancora disponibile",
-  
+
   "debug.invite-manager-init": "InviteCodeManager inizializzato",
   "debug.pause-manager-init": "AutoPauseManager inizializzato (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Gioco avviato, configurazione componenti...",
   "debug.save-loaded-invite": "Salvataggio caricato. Flag sessione host reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "Salvataggio caricato. Flag auto-pausa reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "Impostazioni Generali",
   "config.general.mod-enabled": "Abilita Mod",
   "config.general.mod-enabled.tooltip": "Abilita o disabilita tutte le funzionalità della mod.",
   "config.general.log-level": "Livello Log",
   "config.general.log-level.tooltip": "Imposta quante informazioni registrare nel log.",
-  
+
   "config.invite.header": "Impostazioni Codice Invito",
   "config.invite.enabled": "Copia Automatica Codici Invito",
   "config.invite.enabled.tooltip": "Copia automaticamente i codici invito multiplayer negli appunti.",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "Visualizza notifica quando il codice invito viene copiato.",
   "config.invite.show-manual-copy-message": "Mostra Messaggi Copia Manuale",
   "config.invite.show-manual-copy-message.tooltip": "Mostra messaggio di copia manuale quando gli appunti falliscono.",
-  
+
   "config.pause.header": "Impostazioni Pausa",
   "config.pause.enabled": "Auto-Pausa Durante l'Hosting",
   "config.pause.enabled.tooltip": "Metti automaticamente in pausa il gioco quando inizi a ospitare una sessione multiplayer.",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "Permetti pausa/ripresa manuale con tasto configurabile.",
   "config.pause.toggle-key": "Tasto Alternanza Pausa",
   "config.pause.toggle-key.tooltip": "Combinazione di tasti per mettere manualmente in pausa/riprendere il gioco.",
-  
+
   "config.configure.header": "Impostazioni Auto-Configurazione",
   "config.configure.enabled": "Abilita Auto-Configurazione",
   "config.configure.enabled.tooltip": "Configura automaticamente le impostazioni della mappa quando si ospita il multiplayer.",
@@ -76,24 +76,24 @@
   "config.configure.move-building-permission-on": "Acceso (Tutti gli Edifici)",
   "config.configure.unban-all": "Rimuovi Ban Automaticamente a Tutti i Giocatori",
   "config.configure.unban-all.tooltip": "Rimuovi automaticamente il ban a tutti i giocatori quando configuri la mappa.",
-  
+
   "configure.log-attempting": "Tentativo di auto-configurazione delle impostazioni della mappa...",
   "configure.log-completed": "Auto-configurazione della mappa completata con successo",
   "configure.log-command-executed": "Comando eseguito: {{command}}",
   "configure.error-failed": "Errore durante l'auto-configurazione della mappa: {{error}}",
   "configure.error-chatbox-unavailable": "Chatbox non disponibile per l'esecuzione dei comandi",
   "configure.error-command-failed": "Errore nell'esecuzione del comando {{command}} {{parameter}}: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager inizializzato",
   "debug.save-loaded-configure": "Salvataggio caricato. Flag auto-configurazione reimpostato. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "Impostazioni Whitelist",
   "config.whitelist.setup-info": "Per configurare la whitelist: Attiva il logging qui sotto, lascia che i giocatori si uniscano per vedere i loro identificatori nella console, poi aggiungi gli identificatori desiderati al file whitelist.json.",
   "config.whitelist.enabled": "Abilita Whitelist",
   "config.whitelist.enabled.tooltip": "Consenti solo ai giocatori nella whitelist di unirsi al server.",
   "config.whitelist.log-player-identifiers": "Registra Identificatori Giocatori",
   "config.whitelist.log-player-identifiers.tooltip": "Visualizza identificatori giocatori nella console quando si uniscono per aiutarti a configurare la whitelist.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager inizializzato",
   "whitelist.log-enabled": "Funzionalità whitelist abilitata",
   "whitelist.log-disabled": "Funzionalità whitelist disabilitata",
@@ -103,14 +103,14 @@
   "whitelist.log-player-joined": "Giocatore entrato: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "Giocatore espulso (non in whitelist): {{player}}",
   "whitelist.log-kick-executed": "Comando espulsione eseguito: {{command}}",
-  
+
   "whitelist.error-loading": "Errore caricamento whitelist: {{error}}",
   "whitelist.error-saving": "Errore salvataggio whitelist: {{error}}",
   "whitelist.error-file-watcher": "Errore impostazione monitor file: {{error}}",
   "whitelist.error-reload": "Errore ricaricamento whitelist: {{error}}",
   "whitelist.error-checking": "Errore controllo whitelist: {{error}}",
   "whitelist.error-kick": "Errore espulsione giocatore: {{error}}",
-  
+
   "config.about.header": "Informazioni",
   "config.about.repository": "Codice Sorgente: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Licenziato sotto Licenza MIT."

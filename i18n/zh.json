@@ -3,44 +3,44 @@
   "core.description": "自动复制邀请码、暂停快捷键、白名单、自动配置",
   "core.loaded": "MultiplayerHelper模组已加载，采用模块化架构！",
   "core.disabled": "MultiplayerHelper模组在配置中被禁用",
-  
+
   "invite.hud-copied": "邀请码已复制到剪贴板：{{code}}",
   "invite.hud-manual": "邀请码（手动复制）：{{code}}",
-  
+
   "invite.log-detecting": "检测到服务器！正在尝试获取邀请码...",
   "invite.log-found": "通过getInviteCode方法找到邀请码：{{code}}",
   "invite.log-copied": "邀请码已复制到剪贴板：{{code}}",
   "invite.log-unavailable": "邀请码暂不可用",
-  
+
   "invite.error-clipboard": "复制到剪贴板时出错：{{error}}",
   "invite.error-detection": "获取邀请码时出错：{{error}}",
-  
+
   "pause.hud-paused-direct": "游戏已暂停 - 按P键继续",
   "pause.hud-resumed": "游戏已恢复",
   "pause.hud-paused-manual": "游戏已暂停",
-  
+
   "pause.log-auto-direct": "使用直接暂停方法自动暂停游戏（按P键继续）",
   "pause.log-auto-chatbox": "通过聊天框发送/pause命令",
   "pause.log-manual-resumed": "按P键恢复游戏",
   "pause.log-manual-paused": "按P键暂停游戏",
   "pause.log-already-paused": "游戏已处于暂停状态",
   "pause.log-player-connected": "玩家{{playerName}}已连接到游戏",
-  
+
   "pause.error-failed": "自动暂停游戏时出错：{{error}}",
   "pause.error-chatbox-unavailable": "聊天框暂不可用",
-  
+
   "debug.invite-manager-init": "InviteCodeManager已初始化",
   "debug.pause-manager-init": "AutoPauseManager已初始化（useDirectPause：{{useDirectPause}}）",
   "debug.game-launched": "MultiplayerHelper：游戏已启动，正在配置组件...",
   "debug.save-loaded-invite": "存档已加载。重置主机会话标志。IsMainPlayer：{{isMainPlayer}}，IsMultiplayer：{{isMultiplayer}}",
   "debug.save-loaded-pause": "存档已加载。重置自动暂停标志。IsMainPlayer：{{isMainPlayer}}，IsMultiplayer：{{isMultiplayer}}",
-  
+
   "config.general.header": "通用设置",
   "config.general.mod-enabled": "启用模组",
   "config.general.mod-enabled.tooltip": "启用或禁用所有模组功能。",
   "config.general.log-level": "日志级别",
   "config.general.log-level.tooltip": "设置记录多少信息到日志。",
-  
+
   "config.invite.header": "邀请码设置",
   "config.invite.enabled": "自动复制邀请码",
   "config.invite.enabled.tooltip": "自动将多人游戏邀请码复制到剪贴板。",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "在复制邀请码时显示通知。",
   "config.invite.show-manual-copy-message": "显示手动复制消息",
   "config.invite.show-manual-copy-message.tooltip": "在剪贴板失败时显示手动复制消息。",
-  
+
   "config.pause.header": "暂停设置",
   "config.pause.enabled": "托管时自动暂停",
   "config.pause.enabled.tooltip": "您开始托管多人游戏会话时自动暂停游戏。",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "允许使用可配置按键手动暂停/恢复。",
   "config.pause.toggle-key": "暂停切换键",
   "config.pause.toggle-key.tooltip": "用于手动暂停/恢复游戏的按键组合。",
-  
+
   "config.configure.header": "自动配置设置",
   "config.configure.enabled": "启用自动配置",
   "config.configure.enabled.tooltip": "在托管多人游戏时自动配置地图设置。",
@@ -76,24 +76,24 @@
   "config.configure.move-building-permission-on": "开启（所有建筑）",
   "config.configure.unban-all": "自动解禁所有玩家",
   "config.configure.unban-all.tooltip": "配置地图时自动解禁所有玩家。",
-  
+
   "configure.log-attempting": "正在尝试自动配置地图设置...",
   "configure.log-completed": "地图自动配置成功完成",
   "configure.log-command-executed": "已执行命令：{{command}}",
   "configure.error-failed": "地图自动配置期间出错：{{error}}",
   "configure.error-chatbox-unavailable": "聊天框不可用于命令执行",
   "configure.error-command-failed": "执行命令 {{command}} {{parameter}} 出错：{{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager已初始化",
   "debug.save-loaded-configure": "存档已加载。重置自动配置标志。IsMainPlayer：{{isMainPlayer}}，IsMultiplayer：{{isMultiplayer}}",
-  
+
   "config.whitelist.header": "白名单设置",
   "config.whitelist.setup-info": "设置白名单：启用下方日志记录，让玩家加入以在控制台中查看他们的标识符，然后将所需标识符添加到whitelist.json文件中。",
   "config.whitelist.enabled": "启用白名单",
   "config.whitelist.enabled.tooltip": "仅允许白名单中的玩家加入服务器。",
   "config.whitelist.log-player-identifiers": "记录玩家标识符",
   "config.whitelist.log-player-identifiers.tooltip": "在玩家加入时在控制台显示玩家标识符以帮助您设置白名单。",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager已初始化",
   "whitelist.log-enabled": "白名单功能已启用",
   "whitelist.log-disabled": "白名单功能已禁用",
@@ -103,14 +103,14 @@
   "whitelist.log-player-joined": "玩家加入：DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "玩家被踢出（不在白名单中）：{{player}}",
   "whitelist.log-kick-executed": "执行踢出命令：{{command}}",
-  
+
   "whitelist.error-loading": "加载白名单错误：{{error}}",
   "whitelist.error-saving": "保存白名单错误：{{error}}",
   "whitelist.error-file-watcher": "设置文件监视器错误：{{error}}",
   "whitelist.error-reload": "重新加载白名单错误：{{error}}",
   "whitelist.error-checking": "检查白名单错误：{{error}}",
   "whitelist.error-kick": "踢出玩家错误：{{error}}",
-  
+
   "config.about.header": "关于",
   "config.about.repository": "手砉秦：github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. 采用MIT许可证。"

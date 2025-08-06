@@ -3,44 +3,44 @@
   "core.description": "초대 코드 자동 복사, 일시정지 단축키, 화이트리스트, 자동 설정",
   "core.loaded": "MultiplayerHelper 모드가 모듈식 아키텍처로 로드되었습니다!",
   "core.disabled": "MultiplayerHelper 모드가 설정에서 비활성화되었습니다",
-  
+
   "invite.hud-copied": "초대 코드가 클립보드에 복사됨: {{code}}",
   "invite.hud-manual": "초대 코드 (수동 복사): {{code}}",
-  
+
   "invite.log-detecting": "서버 감지됨! 초대 코드 획득 시도 중...",
   "invite.log-found": "getInviteCode 메서드로 초대 코드 발견: {{code}}",
   "invite.log-copied": "초대 코드가 클립보드에 복사됨: {{code}}",
   "invite.log-unavailable": "초대 코드가 아직 사용할 수 없음",
-  
+
   "invite.error-clipboard": "클립보드 복사 오류: {{error}}",
   "invite.error-detection": "초대 코드 획득 오류: {{error}}",
-  
+
   "pause.hud-paused-direct": "게임 일시정지됨 - P키로 재개",
   "pause.hud-resumed": "게임 재개됨",
   "pause.hud-paused-manual": "게임 일시정지됨",
-  
+
   "pause.log-auto-direct": "직접 일시정지 방법으로 게임 자동 일시정지 (P키로 재개)",
   "pause.log-auto-chatbox": "채팅박스를 통해 /pause 명령어 전송",
   "pause.log-manual-resumed": "P키를 눌러 게임 재개",
   "pause.log-manual-paused": "P키를 눌러 게임 일시정지",
   "pause.log-already-paused": "게임이 이미 일시정지됨",
   "pause.log-player-connected": "플레이어 {{playerName}}이(가) 게임에 연결됨",
-  
+
   "pause.error-failed": "게임 자동 일시정지 오류: {{error}}",
   "pause.error-chatbox-unavailable": "채팅박스가 아직 사용할 수 없음",
-  
+
   "debug.invite-manager-init": "InviteCodeManager 초기화됨",
   "debug.pause-manager-init": "AutoPauseManager 초기화됨 (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: 게임 시작됨, 구성 요소 설정 중...",
   "debug.save-loaded-invite": "세이브 로드됨. 호스트 세션 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "세이브 로드됨. 자동 일시정지 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "일반 설정",
   "config.general.mod-enabled": "모드 활성화",
   "config.general.mod-enabled.tooltip": "모드의 모든 기능을 활성화 또는 비활성화합니다.",
   "config.general.log-level": "로그 레벨",
   "config.general.log-level.tooltip": "로그에 기록할 정보의 양을 설정합니다.",
-  
+
   "config.invite.header": "초대 코드 설정",
   "config.invite.enabled": "초대 코드 자동 복사",
   "config.invite.enabled.tooltip": "멀티플레이어 초대 코드를 자동으로 클립보드에 복사합니다.",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "초대 코드가 복사될 때 알림을 표시합니다.",
   "config.invite.show-manual-copy-message": "수동 복사 메시지 표시",
   "config.invite.show-manual-copy-message.tooltip": "클립보드가 실패할 때 수동 복사 메시지를 표시합니다.",
-  
+
   "config.pause.header": "일시정지 설정",
   "config.pause.enabled": "호스팅 시 자동 일시정지",
   "config.pause.enabled.tooltip": "멀티플레이어 세션을 호스팅할 때 자동으로 게임을 일시정지합니다.",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "설정 가능한 키로 수동 일시정지/재개를 허용합니다.",
   "config.pause.toggle-key": "일시정지 토글 키",
   "config.pause.toggle-key.tooltip": "게임을 수동으로 일시정지/재개하기 위한 키 조합입니다.",
-  
+
   "config.configure.header": "자동 구성 설정",
   "config.configure.enabled": "자동 구성 활성화",
   "config.configure.enabled.tooltip": "멀티플레이어 호스팅 시 맵 설정을 자동으로 구성합니다.",
@@ -76,24 +76,24 @@
   "config.configure.move-building-permission-on": "켜기 (모든 건물)",
   "config.configure.unban-all": "모든 플레이어 자동 밴 해제",
   "config.configure.unban-all.tooltip": "맵 구성 시 모든 플레이어를 자동으로 밴 해제합니다.",
-  
+
   "configure.log-attempting": "맵 설정 자동 구성을 시도 중...",
   "configure.log-completed": "맵 자동 구성이 성공적으로 완료되었습니다",
   "configure.log-command-executed": "명령어 실행됨: {{command}}",
   "configure.error-failed": "맵 자동 구성 중 오류 발생: {{error}}",
   "configure.error-chatbox-unavailable": "명령어 실행을 위한 채팅박스를 사용할 수 없습니다",
   "configure.error-command-failed": "명령어 {{command}} {{parameter}} 실행 오류: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager가 초기화되었습니다",
   "debug.save-loaded-configure": "세이브가 로드되었습니다. 자동 구성 플래그 리셋. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "화이트리스트 설정",
   "config.whitelist.setup-info": "화이트리스트 설정 방법: 아래 로깅을 활성화하고, 플레이어가 참가하여 콘솔에서 식별자를 확인한 후, 원하는 식별자를 whitelist.json 파일에 추가하세요.",
   "config.whitelist.enabled": "화이트리스트 활성화",
   "config.whitelist.enabled.tooltip": "화이트리스트에 등록된 플레이어만 서버에 참가를 허용합니다.",
   "config.whitelist.log-player-identifiers": "플레이어 식별자 로깅",
   "config.whitelist.log-player-identifiers.tooltip": "화이트리스트 설정을 도와주기 위해 플레이어 참가 시 콘솔에 식별자를 표시합니다.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager가 초기화되었습니다",
   "whitelist.log-enabled": "화이트리스트 기능이 활성화되었습니다",
   "whitelist.log-disabled": "화이트리스트 기능이 비활성화되었습니다",
@@ -103,14 +103,14 @@
   "whitelist.log-player-joined": "플레이어 참가: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "플레이어 축출 (화이트리스트 미등록): {{player}}",
   "whitelist.log-kick-executed": "축출 명령 실행: {{command}}",
-  
+
   "whitelist.error-loading": "화이트리스트 로드 오류: {{error}}",
   "whitelist.error-saving": "화이트리스트 저장 오류: {{error}}",
   "whitelist.error-file-watcher": "파일 감시 설정 오류: {{error}}",
   "whitelist.error-reload": "화이트리스트 재로드 오류: {{error}}",
   "whitelist.error-checking": "화이트리스트 확인 오류: {{error}}",
   "whitelist.error-kick": "플레이어 축출 오류: {{error}}",
-  
+
   "config.about.header": "정보",
   "config.about.repository": "소스 코드: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. MIT 라이선스로 라이선스됩니다."

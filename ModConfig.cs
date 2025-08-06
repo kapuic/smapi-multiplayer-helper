@@ -1,15 +1,19 @@
-using StardewModdingAPI;
-using StardewModdingAPI.Utilities;
+// <copyright file="ModConfig.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MultiplayerHelper
 {
+    using StardewModdingAPI;
+    using StardewModdingAPI.Utilities;
+
     /// <summary>
     /// Configuration options for the MultiplayerHelper mod.
     /// </summary>
     public class ModConfig
     {
         /// <summary>
-        /// Gets or sets whether the mod is enabled.
+        /// Gets or sets a value indicating whether gets or sets whether the mod is enabled.
         /// </summary>
         public bool ModEnabled { get; set; } = true;
 
@@ -19,22 +23,22 @@ namespace MultiplayerHelper
         public LogLevel LogLevel { get; set; } = LogLevel.Info;
 
         /// <summary>
-        /// Gets or sets whether invite code functionality is enabled.
+        /// Gets or sets a value indicating whether gets or sets whether invite code functionality is enabled.
         /// </summary>
         public bool InviteCodeEnabled { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets whether to show HUD notifications when invite codes are copied.
+        /// Gets or sets a value indicating whether gets or sets whether to show HUD notifications when invite codes are copied.
         /// </summary>
         public bool ShowHudNotifications { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets whether to show manual copy messages when clipboard fails.
+        /// Gets or sets a value indicating whether gets or sets whether to show manual copy messages when clipboard fails.
         /// </summary>
         public bool ShowManualCopyMessage { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets whether auto-pause functionality is enabled.
+        /// Gets or sets a value indicating whether gets or sets whether auto-pause functionality is enabled.
         /// </summary>
         public bool AutoPauseEnabled { get; set; } = true;
 
@@ -44,7 +48,7 @@ namespace MultiplayerHelper
         public PauseMethod PauseMethod { get; set; } = PauseMethod.Chatbox;
 
         /// <summary>
-        /// Gets or sets whether manual P key pause/resume toggle is enabled.
+        /// Gets or sets a value indicating whether gets or sets whether manual P key pause/resume toggle is enabled.
         /// </summary>
         public bool EnableManualToggle { get; set; } = true;
 
@@ -54,7 +58,7 @@ namespace MultiplayerHelper
         public KeybindList PauseToggleKey { get; set; } = KeybindList.Parse("P");
 
         /// <summary>
-        /// Gets or sets whether auto-configure functionality is enabled.
+        /// Gets or sets a value indicating whether gets or sets whether auto-configure functionality is enabled.
         /// </summary>
         public bool AutoConfigureEnabled { get; set; } = false;
 
@@ -69,17 +73,17 @@ namespace MultiplayerHelper
         public MoveBuildingPermission MoveBuildingPermissionParameter { get; set; } = MoveBuildingPermission.Owned;
 
         /// <summary>
-        /// Gets or sets whether to automatically unban all players when configuring the map.
+        /// Gets or sets a value indicating whether gets or sets whether to automatically unban all players when configuring the map.
         /// </summary>
         public bool UnbanAllEnabled { get; set; } = false;
 
         /// <summary>
-        /// Gets or sets whether whitelist functionality is enabled.
+        /// Gets or sets a value indicating whether gets or sets whether whitelist functionality is enabled.
         /// </summary>
         public bool WhitelistEnabled { get; set; } = false;
 
         /// <summary>
-        /// Gets or sets whether to show player join information in console with identifiers.
+        /// Gets or sets a value indicating whether gets or sets whether to show player join information in console with identifiers.
         /// </summary>
         public bool ShowPlayerJoinInfo { get; set; } = true;
     }
@@ -97,7 +101,7 @@ namespace MultiplayerHelper
         /// <summary>
         /// Chatbox pause command (multiplayer synchronized).
         /// </summary>
-        Chatbox
+        Chatbox,
     }
 
     /// <summary>
@@ -118,7 +122,7 @@ namespace MultiplayerHelper
         /// <summary>
         /// Show every time a player sleeps.
         /// </summary>
-        All
+        All,
     }
 
     /// <summary>
@@ -139,7 +143,7 @@ namespace MultiplayerHelper
         /// <summary>
         /// Farmhands can move all buildings.
         /// </summary>
-        On
+        On,
     }
 
     /// <summary>
@@ -160,6 +164,6 @@ namespace MultiplayerHelper
         /// <summary>
         /// Use the peer connection ID (IMultiplayerPeer.PlayerID).
         /// </summary>
-        PeerId
+        PeerId,
     }
 }

@@ -3,44 +3,44 @@
   "core.description": "招待コード自動コピー、一時停止ショートカット、ホワイトリスト、自動設定",
   "core.loaded": "MultiplayerHelperモッドがモジュラーアーキテクチャで読み込まれました！",
   "core.disabled": "MultiplayerHelperモッドが設定で無効化されています",
-  
+
   "invite.hud-copied": "招待コードをクリップボードにコピーしました: {{code}}",
   "invite.hud-manual": "招待コード（手動でコピー）: {{code}}",
-  
+
   "invite.log-detecting": "サーバーを検出しました！招待コードの取得を試行中...",
   "invite.log-found": "getInviteCodeメソッドで招待コードを発見: {{code}}",
   "invite.log-copied": "招待コードをクリップボードにコピーしました: {{code}}",
   "invite.log-unavailable": "招待コードはまだ利用できません",
-  
+
   "invite.error-clipboard": "クリップボードへのコピーエラー: {{error}}",
   "invite.error-detection": "招待コード取得エラー: {{error}}",
-  
+
   "pause.hud-paused-direct": "ゲーム一時停止 - Pキーで再開",
   "pause.hud-resumed": "ゲーム再開",
   "pause.hud-paused-manual": "ゲーム一時停止",
-  
+
   "pause.log-auto-direct": "直接一時停止メソッドでゲームを自動一時停止（Pキーで再開）",
   "pause.log-auto-chatbox": "チャットボックス経由で/pauseコマンドを送信",
   "pause.log-manual-resumed": "Pキーを押してゲームを再開",
   "pause.log-manual-paused": "Pキーを押してゲームを一時停止",
   "pause.log-already-paused": "ゲームは既に一時停止中です",
   "pause.log-player-connected": "プレイヤー {{playerName}} がゲームに接続しました",
-  
+
   "pause.error-failed": "ゲームの自動一時停止エラー: {{error}}",
   "pause.error-chatbox-unavailable": "チャットボックスはまだ利用できません",
-  
+
   "debug.invite-manager-init": "InviteCodeManagerが初期化されました",
   "debug.pause-manager-init": "AutoPauseManagerが初期化されました (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: ゲーム開始、コンポーネントを設定中...",
   "debug.save-loaded-invite": "セーブ読み込み完了。ホストセッションフラグをリセット。IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "セーブ読み込み完了。自動一時停止フラグをリセット。IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "一般設定",
   "config.general.mod-enabled": "モッドを有効化",
   "config.general.mod-enabled.tooltip": "モッドのすべての機能を有効または無効にします。",
   "config.general.log-level": "ログレベル",
   "config.general.log-level.tooltip": "ログに記録する情報量を設定します。",
-  
+
   "config.invite.header": "招待コード設定",
   "config.invite.enabled": "招待コード自動コピー",
   "config.invite.enabled.tooltip": "マルチプレイヤー招待コードを自動的にクリップボードにコピーします。",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "招待コードがコピーされたときに通知を表示します。",
   "config.invite.show-manual-copy-message": "手動コピーメッセージを表示",
   "config.invite.show-manual-copy-message.tooltip": "クリップボードが失敗したときに手動コピーメッセージを表示します。",
-  
+
   "config.pause.header": "一時停止設定",
   "config.pause.enabled": "ホスト時に自動一時停止",
   "config.pause.enabled.tooltip": "マルチプレイヤーセッションをホストしたときに自動的にゲームを一時停止します。",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "設定可能なキーでの手動一時停止/再開を許可します。",
   "config.pause.toggle-key": "一時停止切り替えキー",
   "config.pause.toggle-key.tooltip": "ゲームを手動で一時停止/再開するためのキー組み合わせ。",
-  
+
   "config.configure.header": "自動設定",
   "config.configure.enabled": "自動設定を有効化",
   "config.configure.enabled.tooltip": "マルチプレイヤーホスト時にマップ設定を自動的に構成します。",
@@ -76,24 +76,24 @@
   "config.configure.move-building-permission-on": "オン（全ての建物）",
   "config.configure.unban-all": "全プレイヤーの自動アンバン",
   "config.configure.unban-all.tooltip": "マップ設定時に全プレイヤーを自動的にアンバンします。",
-  
+
   "configure.log-attempting": "マップ設定の自動構成を試行中...",
   "configure.log-completed": "マップの自動設定が正常に完了しました",
   "configure.log-command-executed": "コマンドを実行しました: {{command}}",
   "configure.error-failed": "マップの自動設定中にエラーが発生しました: {{error}}",
   "configure.error-chatbox-unavailable": "コマンド実行にチャットボックスが利用できません",
   "configure.error-command-failed": "コマンド {{command}} {{parameter}} の実行エラー: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManagerが初期化されました",
   "debug.save-loaded-configure": "セーブが読み込まれました。自動設定フラグをリセット。IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "ホワイトリスト設定",
   "config.whitelist.setup-info": "ホワイトリストの設定方法：下記のログを有効にし、プレイヤーに参加してもらいコンソールで識別子を確認し、必要な識別子をwhitelist.jsonファイルに追加してください。",
   "config.whitelist.enabled": "ホワイトリストを有効にする",
   "config.whitelist.enabled.tooltip": "ホワイトリストに登録されたプレイヤーのみサーバーへの参加を許可。",
   "config.whitelist.log-player-identifiers": "プレイヤー識別子をログ出力",
   "config.whitelist.log-player-identifiers.tooltip": "ホワイトリスト設定の手助けとしてプレイヤー参加時にコンソールで識別子を表示。",
-  
+
   "debug.whitelist-manager-init": "WhitelistManagerが初期化されました",
   "whitelist.log-enabled": "ホワイトリスト機能が有効になりました",
   "whitelist.log-disabled": "ホワイトリスト機能が無効になりました",
@@ -103,14 +103,14 @@
   "whitelist.log-player-joined": "プレイヤーが参加: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "プレイヤーをキック（ホワイトリストに未登録）: {{player}}",
   "whitelist.log-kick-executed": "キックコマンドを実行: {{command}}",
-  
+
   "whitelist.error-loading": "ホワイトリスト読み込みエラー: {{error}}",
   "whitelist.error-saving": "ホワイトリスト保存エラー: {{error}}",
   "whitelist.error-file-watcher": "ファイル監視設定エラー: {{error}}",
   "whitelist.error-reload": "ホワイトリスト再読み込みエラー: {{error}}",
   "whitelist.error-checking": "ホワイトリストチェックエラー: {{error}}",
   "whitelist.error-kick": "プレイヤーキックエラー: {{error}}",
-  
+
   "config.about.header": "情報",
   "config.about.repository": "ソースコード: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. MITライセンスでライセンスされています。"

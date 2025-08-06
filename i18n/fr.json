@@ -1,47 +1,46 @@
 {
-  
   "core.name": "Assistant Multijoueur",
   "core.description": "Copie auto codes d'invitation, raccourcis pause, whitelist et auto-configuration",
   "core.loaded": "Mod MultiplayerHelper chargé avec une architecture modulaire !",
   "core.disabled": "Le mod MultiplayerHelper est désactivé dans la configuration",
-  
+
   "invite.hud-copied": "Code d'invitation copié dans le presse-papiers : {{code}}",
   "invite.hud-manual": "Code d'invitation (copier manuellement) : {{code}}",
-  
+
   "invite.log-detecting": "Serveur détecté ! Tentative d'obtenir le code d'invitation...",
   "invite.log-found": "Code d'invitation trouvé via la méthode getInviteCode : {{code}}",
   "invite.log-copied": "Code d'invitation copié dans le presse-papiers : {{code}}",
   "invite.log-unavailable": "Code d'invitation pas encore disponible",
-  
+
   "invite.error-clipboard": "Erreur lors de la copie dans le presse-papiers : {{error}}",
   "invite.error-detection": "Erreur lors de l'obtention du code d'invitation : {{error}}",
-  
+
   "pause.hud-paused-direct": "Jeu en pause - Appuyez sur P pour reprendre",
   "pause.hud-resumed": "Jeu repris",
   "pause.hud-paused-manual": "Jeu en pause",
-  
+
   "pause.log-auto-direct": "Jeu auto-pausé avec la méthode de pause directe (appuyez sur P pour reprendre)",
   "pause.log-auto-chatbox": "Commande /pause envoyée via la chatbox",
   "pause.log-manual-resumed": "Jeu repris en appuyant sur P",
   "pause.log-manual-paused": "Jeu mis en pause en appuyant sur P",
   "pause.log-already-paused": "Le jeu est déjà en pause",
   "pause.log-player-connected": "Joueur {{playerName}} connecté au jeu",
-  
+
   "pause.error-failed": "Erreur lors de la mise en pause automatique du jeu : {{error}}",
   "pause.error-chatbox-unavailable": "Chatbox pas encore disponible",
-  
+
   "debug.invite-manager-init": "InviteCodeManager initialisé",
   "debug.pause-manager-init": "AutoPauseManager initialisé (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper : Jeu lancé, configuration des composants...",
   "debug.save-loaded-invite": "Sauvegarde chargée. Flag de session hébergée réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "Sauvegarde chargée. Flag de pause automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "Paramètres Généraux",
   "config.general.mod-enabled": "Activer le Mod",
   "config.general.mod-enabled.tooltip": "Activer ou désactiver toutes les fonctionnalités du mod.",
   "config.general.log-level": "Niveau de Journal",
   "config.general.log-level.tooltip": "Définir la quantité d'informations à journaliser.",
-  
+
   "config.invite.header": "Paramètres des Codes d'Invitation",
   "config.invite.enabled": "Copier Automatiquement les Codes d'Invitation",
   "config.invite.enabled.tooltip": "Copier automatiquement les codes d'invitation multijoueur dans le presse-papiers.",
@@ -49,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "Afficher une notification quand le code d'invitation est copié.",
   "config.invite.show-manual-copy-message": "Afficher les Messages de Copie Manuelle",
   "config.invite.show-manual-copy-message.tooltip": "Afficher un message de copie manuelle quand le presse-papiers échoue.",
-  
+
   "config.pause.header": "Paramètres de Pause",
   "config.pause.enabled": "Auto-Pause Lors de l'Hébergement",
   "config.pause.enabled.tooltip": "Mettre automatiquement en pause le jeu lorsque vous hébergez une session multijoueur.",
@@ -61,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "Permettre la pause/reprise manuelle avec une touche configurable.",
   "config.pause.toggle-key": "Touche de Bascule de Pause",
   "config.pause.toggle-key.tooltip": "Combinaison de touches pour mettre manuellement en pause/reprendre le jeu.",
-  
+
   "config.configure.header": "Paramètres de Configuration Automatique",
   "config.configure.enabled": "Activer la Configuration Automatique",
   "config.configure.enabled.tooltip": "Configurer automatiquement les paramètres de carte lors de l'hébergement multijoueur.",
@@ -77,24 +76,24 @@
   "config.configure.move-building-permission-on": "Activé (Tous les Bâtiments)",
   "config.configure.unban-all": "Débannir Automatiquement Tous les Joueurs",
   "config.configure.unban-all.tooltip": "Débannir automatiquement tous les joueurs lors de la configuration de la carte.",
-  
+
   "configure.log-attempting": "Tentative de configuration automatique des paramètres de carte...",
   "configure.log-completed": "Configuration automatique de la carte terminée avec succès",
   "configure.log-command-executed": "Commande exécutée: {{command}}",
   "configure.error-failed": "Erreur lors de la configuration automatique de la carte: {{error}}",
   "configure.error-chatbox-unavailable": "Boîte de chat non disponible pour l'exécution de commande",
   "configure.error-command-failed": "Erreur lors de l'exécution de la commande {{command}} {{parameter}}: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager initialisé",
   "debug.save-loaded-configure": "Sauvegarde chargée. Drapeau de configuration automatique réinitialisé. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "Paramètres de Liste Blanche",
   "config.whitelist.setup-info": "Pour configurer la liste blanche : Activez la journalisation ci-dessous, laissez les joueurs rejoindre pour voir leurs identifiants dans la console, puis ajoutez les identifiants désirés au fichier whitelist.json.",
   "config.whitelist.enabled": "Activer la Liste Blanche",
   "config.whitelist.enabled.tooltip": "Autoriser uniquement les joueurs de la liste blanche à rejoindre le serveur.",
   "config.whitelist.log-player-identifiers": "Enregistrer les Identifiants de Joueurs",
   "config.whitelist.log-player-identifiers.tooltip": "Afficher les identifiants des joueurs dans la console pour aider à configurer la liste blanche.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager initialisé",
   "whitelist.log-enabled": "Fonctionnalité de liste blanche activée",
   "whitelist.log-disabled": "Fonctionnalité de liste blanche désactivée",
@@ -104,14 +103,14 @@
   "whitelist.log-player-joined": "Joueur connecté : DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "Joueur expulsé (pas dans la liste blanche) : {{player}}",
   "whitelist.log-kick-executed": "Commande d'expulsion exécutée : {{command}}",
-  
+
   "whitelist.error-loading": "Erreur lors du chargement de la liste blanche : {{error}}",
   "whitelist.error-saving": "Erreur lors de la sauvegarde de la liste blanche : {{error}}",
   "whitelist.error-file-watcher": "Erreur lors de la configuration du surveillant de fichier : {{error}}",
   "whitelist.error-reload": "Erreur lors du rechargement de la liste blanche : {{error}}",
   "whitelist.error-checking": "Erreur lors de la vérification de la liste blanche : {{error}}",
   "whitelist.error-kick": "Erreur lors de l'expulsion du joueur : {{error}}",
-  
+
   "config.about.header": "À propos",
   "config.about.repository": "Code Source: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. Sous licence MIT."

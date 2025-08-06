@@ -1,13 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
-using StardewValley;
+// <copyright file="WhitelistManager.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MultiplayerHelper.Components
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using StardewModdingAPI;
+    using StardewModdingAPI.Events;
+    using StardewValley;
+
     /// <summary>
     /// Manages player whitelisting functionality.
     /// </summary>
@@ -32,16 +36,16 @@ namespace MultiplayerHelper.Components
             this.monitor = monitor;
             this.config = config;
             this.whitelistFilePath = Path.Combine(helper.DirectoryPath, "whitelist.json");
-            
+
             this.monitor.Log(helper.Translation.Get("debug.whitelist-manager-init"), LogLevel.Debug);
-            
-            LoadWhitelist();
-            SetupFileWatcher();
-            
+
+            this.LoadWhitelist();
+            this.SetupFileWatcher();
+
             if (config.WhitelistEnabled)
             {
-                helper.Events.Multiplayer.PeerConnected += OnPeerConnected;
-                helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
+                helper.Events.Multiplayer.PeerConnected += this.OnPeerConnected;
+                helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
             }
         }
 
@@ -51,17 +55,17 @@ namespace MultiplayerHelper.Components
         /// <param name="enabled">Whether to enable whitelist.</param>
         public void SetEnabled(bool enabled)
         {
-            if (enabled && !config.WhitelistEnabled)
+            if (enabled && !this.config.WhitelistEnabled)
             {
-                helper.Events.Multiplayer.PeerConnected += OnPeerConnected;
-                helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
-                monitor.Log(helper.Translation.Get("whitelist.log-enabled"), LogLevel.Info);
+                this.helper.Events.Multiplayer.PeerConnected += this.OnPeerConnected;
+                this.helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
+                this.monitor.Log(this.helper.Translation.Get("whitelist.log-enabled"), LogLevel.Info);
             }
-            else if (!enabled && config.WhitelistEnabled)
+            else if (!enabled && this.config.WhitelistEnabled)
             {
-                helper.Events.Multiplayer.PeerConnected -= OnPeerConnected;
-                helper.Events.GameLoop.SaveLoaded -= OnSaveLoaded;
-                monitor.Log(helper.Translation.Get("whitelist.log-disabled"), LogLevel.Info);
+                this.helper.Events.Multiplayer.PeerConnected -= this.OnPeerConnected;
+                this.helper.Events.GameLoop.SaveLoaded -= this.OnSaveLoaded;
+                this.monitor.Log(this.helper.Translation.Get("whitelist.log-disabled"), LogLevel.Info);
             }
         }
 
@@ -72,22 +76,22 @@ namespace MultiplayerHelper.Components
         {
             try
             {
-                if (File.Exists(whitelistFilePath))
+                if (File.Exists(this.whitelistFilePath))
                 {
-                    whitelist = helper.Data.ReadJsonFile<WhitelistData>(Path.GetFileName(whitelistFilePath)) ?? new WhitelistData();
-                    monitor.Log(helper.Translation.Get("whitelist.log-loaded", new { count = whitelist.GetTotalCount() }), LogLevel.Debug);
+                    this.whitelist = this.helper.Data.ReadJsonFile<WhitelistData>(Path.GetFileName(this.whitelistFilePath)) ?? new WhitelistData();
+                    this.monitor.Log(this.helper.Translation.Get("whitelist.log-loaded", new { count = this.whitelist.GetTotalCount() }), LogLevel.Debug);
                 }
                 else
                 {
-                    whitelist = new WhitelistData();
-                    SaveWhitelist();
-                    monitor.Log(helper.Translation.Get("whitelist.log-created"), LogLevel.Info);
+                    this.whitelist = new WhitelistData();
+                    this.SaveWhitelist();
+                    this.monitor.Log(this.helper.Translation.Get("whitelist.log-created"), LogLevel.Info);
                 }
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-loading", new { error = ex.Message }), LogLevel.Error);
-                whitelist = new WhitelistData();
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-loading", new { error = ex.Message }), LogLevel.Error);
+                this.whitelist = new WhitelistData();
             }
         }
 
@@ -98,11 +102,11 @@ namespace MultiplayerHelper.Components
         {
             try
             {
-                helper.Data.WriteJsonFile(Path.GetFileName(whitelistFilePath), whitelist);
+                this.helper.Data.WriteJsonFile(Path.GetFileName(this.whitelistFilePath), this.whitelist);
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-saving", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-saving", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -113,20 +117,20 @@ namespace MultiplayerHelper.Components
         {
             try
             {
-                var directory = Path.GetDirectoryName(whitelistFilePath);
-                var fileName = Path.GetFileName(whitelistFilePath);
+                var directory = Path.GetDirectoryName(this.whitelistFilePath);
+                var fileName = Path.GetFileName(this.whitelistFilePath);
 
-                fileWatcher = new FileSystemWatcher(directory, fileName)
+                this.fileWatcher = new FileSystemWatcher(directory, fileName)
                 {
                     NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size,
-                    EnableRaisingEvents = true
+                    EnableRaisingEvents = true,
                 };
 
-                fileWatcher.Changed += OnWhitelistFileChanged;
+                this.fileWatcher.Changed += this.OnWhitelistFileChanged;
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-file-watcher", new { error = ex.Message }), LogLevel.Warn);
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-file-watcher", new { error = ex.Message }), LogLevel.Warn);
             }
         }
 
@@ -139,12 +143,12 @@ namespace MultiplayerHelper.Components
             {
                 // Add a small delay to ensure file write is complete
                 System.Threading.Thread.Sleep(100);
-                LoadWhitelist();
-                monitor.Log(helper.Translation.Get("whitelist.log-reloaded"), LogLevel.Info);
+                this.LoadWhitelist();
+                this.monitor.Log(this.helper.Translation.Get("whitelist.log-reloaded"), LogLevel.Info);
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-reload", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-reload", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -153,39 +157,42 @@ namespace MultiplayerHelper.Components
         /// </summary>
         private void OnPeerConnected(object sender, PeerConnectedEventArgs e)
         {
-            if (!config.WhitelistEnabled || !Context.IsMainPlayer)
+            if (!this.config.WhitelistEnabled || !Context.IsMainPlayer)
+            {
                 return;
+            }
 
             try
             {
                 var peer = e.Peer;
-                
+
                 // Get player information
-                var displayName = GetPlayerDisplayName(peer);
-                var uniqueId = GetPlayerUniqueId(peer);
+                var displayName = this.GetPlayerDisplayName(peer);
+                var uniqueId = this.GetPlayerUniqueId(peer);
                 var peerId = peer.PlayerID.ToString();
 
                 // Log player join info if enabled
-                if (config.ShowPlayerJoinInfo)
+                if (this.config.ShowPlayerJoinInfo)
                 {
-                    monitor.Log(helper.Translation.Get("whitelist.log-player-joined", new 
-                    { 
+                    this.monitor.Log(
+                        this.helper.Translation.Get("whitelist.log-player-joined", new
+                    {
                         displayName = displayName ?? "Unknown",
-                        uniqueId = uniqueId ?? "Unknown", 
-                        peerId = peerId 
+                        uniqueId = uniqueId ?? "Unknown",
+                        peerId = peerId,
                     }), LogLevel.Info);
                 }
 
                 // Check whitelist
-                if (!IsPlayerWhitelisted(displayName, uniqueId, peerId))
+                if (!this.IsPlayerWhitelisted(displayName, uniqueId, peerId))
                 {
-                    KickPlayer(displayName);
-                    monitor.Log(helper.Translation.Get("whitelist.log-player-kicked", new { player = displayName ?? peerId }), LogLevel.Info);
+                    this.KickPlayer(displayName);
+                    this.monitor.Log(this.helper.Translation.Get("whitelist.log-player-kicked", new { player = displayName ?? peerId }), LogLevel.Info);
                 }
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-checking", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-checking", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -194,11 +201,13 @@ namespace MultiplayerHelper.Components
         /// </summary>
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
-            if (!config.WhitelistEnabled || !Context.IsMainPlayer)
+            if (!this.config.WhitelistEnabled || !Context.IsMainPlayer)
+            {
                 return;
+            }
 
             // Check existing connected players
-            helper.Events.GameLoop.UpdateTicked += OnUpdateTickedOnce;
+            this.helper.Events.GameLoop.UpdateTicked += this.OnUpdateTickedOnce;
         }
 
         /// <summary>
@@ -206,26 +215,26 @@ namespace MultiplayerHelper.Components
         /// </summary>
         private void OnUpdateTickedOnce(object sender, UpdateTickedEventArgs e)
         {
-            helper.Events.GameLoop.UpdateTicked -= OnUpdateTickedOnce;
-            
+            this.helper.Events.GameLoop.UpdateTicked -= this.OnUpdateTickedOnce;
+
             try
             {
-                foreach (var peer in helper.Multiplayer.GetConnectedPlayers())
+                foreach (var peer in this.helper.Multiplayer.GetConnectedPlayers())
                 {
-                    var displayName = GetPlayerDisplayName(peer);
-                    var uniqueId = GetPlayerUniqueId(peer);
+                    var displayName = this.GetPlayerDisplayName(peer);
+                    var uniqueId = this.GetPlayerUniqueId(peer);
                     var peerId = peer.PlayerID.ToString();
 
-                    if (!IsPlayerWhitelisted(displayName, uniqueId, peerId))
+                    if (!this.IsPlayerWhitelisted(displayName, uniqueId, peerId))
                     {
-                        KickPlayer(displayName);
-                        monitor.Log(helper.Translation.Get("whitelist.log-player-kicked", new { player = displayName ?? peerId }), LogLevel.Info);
+                        this.KickPlayer(displayName);
+                        this.monitor.Log(this.helper.Translation.Get("whitelist.log-player-kicked", new { player = displayName ?? peerId }), LogLevel.Info);
                     }
                 }
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-checking", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-checking", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -268,20 +277,28 @@ namespace MultiplayerHelper.Components
         private bool IsPlayerWhitelisted(string displayName, string uniqueId, string peerId)
         {
             // If whitelist is empty, allow all players
-            if (whitelist.GetTotalCount() == 0)
+            if (this.whitelist.GetTotalCount() == 0)
+            {
                 return true;
+            }
 
             // Check display name
-            if (!string.IsNullOrEmpty(displayName) && whitelist.DisplayNames.Contains(displayName))
+            if (!string.IsNullOrEmpty(displayName) && this.whitelist.DisplayNames.Contains(displayName))
+            {
                 return true;
+            }
 
             // Check unique ID
-            if (!string.IsNullOrEmpty(uniqueId) && whitelist.UniqueIds.Contains(uniqueId))
+            if (!string.IsNullOrEmpty(uniqueId) && this.whitelist.UniqueIds.Contains(uniqueId))
+            {
                 return true;
+            }
 
             // Check peer ID
-            if (!string.IsNullOrEmpty(peerId) && whitelist.PeerIds.Contains(peerId))
+            if (!string.IsNullOrEmpty(peerId) && this.whitelist.PeerIds.Contains(peerId))
+            {
                 return true;
+            }
 
             return false;
         }
@@ -297,12 +314,12 @@ namespace MultiplayerHelper.Components
                 {
                     var command = $"kick {playerName}";
                     Game1.game1.parseDebugInput(command);
-                    monitor.Log(helper.Translation.Get("whitelist.log-kick-executed", new { command }), LogLevel.Debug);
+                    this.monitor.Log(this.helper.Translation.Get("whitelist.log-kick-executed", new { command }), LogLevel.Debug);
                 }
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("whitelist.error-kick", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("whitelist.error-kick", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -311,10 +328,10 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Dispose()
         {
-            helper.Events.Multiplayer.PeerConnected -= OnPeerConnected;
-            helper.Events.GameLoop.SaveLoaded -= OnSaveLoaded;
-            helper.Events.GameLoop.UpdateTicked -= OnUpdateTickedOnce;
-            fileWatcher?.Dispose();
+            this.helper.Events.Multiplayer.PeerConnected -= this.OnPeerConnected;
+            this.helper.Events.GameLoop.SaveLoaded -= this.OnSaveLoaded;
+            this.helper.Events.GameLoop.UpdateTicked -= this.OnUpdateTickedOnce;
+            this.fileWatcher?.Dispose();
         }
     }
 
@@ -341,9 +358,10 @@ namespace MultiplayerHelper.Components
         /// <summary>
         /// Get total count of all whitelisted identifiers.
         /// </summary>
+        /// <returns></returns>
         public int GetTotalCount()
         {
-            return DisplayNames.Count + UniqueIds.Count + PeerIds.Count;
+            return this.DisplayNames.Count + this.UniqueIds.Count + this.PeerIds.Count;
         }
     }
 }

@@ -3,44 +3,44 @@
   "core.description": "Automatikus meghívókód másolás, szünet gyorsbillentyűk, whitelist és auto-konfiguráció",
   "core.loaded": "MultiplayerHelper mod betöltve moduláris architektúrával!",
   "core.disabled": "A MultiplayerHelper mod le van tiltva a konfigurációban",
-  
+
   "invite.hud-copied": "Meghívókód vágólapra másolva: {{code}}",
   "invite.hud-manual": "Meghívókód (kézzel másolja): {{code}}",
-  
+
   "invite.log-detecting": "Szerver észlelve! Meghívókód lekérése...",
   "invite.log-found": "Meghívókód megtalálva getInviteCode metódussal: {{code}}",
   "invite.log-copied": "Meghívókód vágólapra másolva: {{code}}",
   "invite.log-unavailable": "Meghívókód még nem elérhető",
-  
+
   "invite.error-clipboard": "Hiba a vágólapra másoláskor: {{error}}",
   "invite.error-detection": "Hiba a meghívókód lekérésekor: {{error}}",
-  
+
   "pause.hud-paused-direct": "Játék szüneteltetve - Nyomja meg a P-t a folytatáshoz",
   "pause.hud-resumed": "Játék folytatva",
   "pause.hud-paused-manual": "Játék szüneteltetve",
-  
+
   "pause.log-auto-direct": "Játék automatikusan szüneteltetve közvetlen szünet módszerrel (nyomja meg a P-t a folytatáshoz)",
   "pause.log-auto-chatbox": "/pause parancs elküldve chatboxon keresztül",
   "pause.log-manual-resumed": "Játék folytatva P megnyomásával",
   "pause.log-manual-paused": "Játék szüneteltetve P megnyomásával",
   "pause.log-already-paused": "A játék már szüneteltetve van",
   "pause.log-player-connected": "{{playerName}} játékos csatlakozott a játékhoz",
-  
+
   "pause.error-failed": "Hiba a játék automatikus szüneteltetésekor: {{error}}",
   "pause.error-chatbox-unavailable": "Chatbox még nem elérhető",
-  
+
   "debug.invite-manager-init": "InviteCodeManager inicializálva",
   "debug.pause-manager-init": "AutoPauseManager inicializálva (useDirectPause: {{useDirectPause}})",
   "debug.game-launched": "MultiplayerHelper: Játék elindítva, komponensek konfigurálása...",
   "debug.save-loaded-invite": "Mentés betöltve. Gazda munkamenet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
   "debug.save-loaded-pause": "Mentés betöltve. Automatikus szünet jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.general.header": "Általános Beállítások",
   "config.general.mod-enabled": "Mod Engedélyezése",
   "config.general.mod-enabled.tooltip": "Az összes mod funkció engedélyezése vagy letiltása.",
   "config.general.log-level": "Napló Szint",
   "config.general.log-level.tooltip": "Meghatározza, mennyi információt rögzítsen a napló.",
-  
+
   "config.invite.header": "Meghívókód Beállítások",
   "config.invite.enabled": "Meghívókódok Automatikus Másolása",
   "config.invite.enabled.tooltip": "Többjátékos meghívókódok automatikus másolása a vágólapra.",
@@ -48,7 +48,7 @@
   "config.invite.show-hud-notifications.tooltip": "Értesítés megjelenítése, amikor a meghívókód másolva lett.",
   "config.invite.show-manual-copy-message": "Kézi Másolási Üzenetek Megjelenítése",
   "config.invite.show-manual-copy-message.tooltip": "Kézi másolási üzenet megjelenítése, amikor a vágólap meghiúsul.",
-  
+
   "config.pause.header": "Szünet Beállítások",
   "config.pause.enabled": "Automatikus Szünet Hosztoláskor",
   "config.pause.enabled.tooltip": "A játék automatikus szüneteltetése, amikor többjátékos munkamenetet kezd hosztolni.",
@@ -60,7 +60,7 @@
   "config.pause.enable-manual-toggle.tooltip": "Kézi szünet/folytatás engedélyezése konfigurálható billentyűvel.",
   "config.pause.toggle-key": "Szünet Váltó Billentyű",
   "config.pause.toggle-key.tooltip": "Billentyű kombináció a játék kézi szüneteltetéséhez/folytatásához.",
-  
+
   "config.configure.header": "Automatikus Konfiguráció Beállítások",
   "config.configure.enabled": "Automatikus Konfiguráció Engedélyezése",
   "config.configure.enabled.tooltip": "Térkép beállítások automatikus konfigurálása többjátékos hosztoláskor.",
@@ -76,23 +76,23 @@
   "config.configure.move-building-permission-on": "Be (Összes Épület)",
   "config.configure.unban-all": "Összes Játékos Automatikus Feloldása",
   "config.configure.unban-all.tooltip": "Automatikusan feloldja az összes játékos tiltását a térkép konfigurálásakor.",
-  
+
   "configure.log-attempting": "Térkép beállítások automatikus konfigurálásának kísérlete...",
   "configure.log-completed": "Térkép automatikus konfigurálása sikeresen befejezve",
   "configure.log-command-executed": "Parancs végrehajtva: {{command}}",
   "configure.error-failed": "Hiba a térkép automatikus konfigurálása során: {{error}}",
   "configure.error-chatbox-unavailable": "Chatbox nem elérhető a parancs végrehajtásához",
   "configure.error-command-failed": "Hiba a {{command}} {{parameter}} parancs végrehajtásakor: {{error}}",
-  
+
   "debug.configure-manager-init": "AutoConfigureManager inicializálva",
   "debug.save-loaded-configure": "Mentés betöltve. Automatikus konfigurációs jelző visszaállítva. IsMainPlayer: {{isMainPlayer}}, IsMultiplayer: {{isMultiplayer}}",
-  
+
   "config.whitelist.header": "Engedélylistázott Beállítások",
   "config.whitelist.enabled": "Engedélylistázás Engedélyezése",
   "config.whitelist.enabled.tooltip": "Csak az engedélylistán szereplő játékosoknak engedélyezi a szerverre csatlakozást.",
   "config.whitelist.show-player-join-info": "Játékos Csatlakozási Információ Megjelenítése",
   "config.whitelist.show-player-join-info.tooltip": "Játékos azonosítók megjelenítése a konzolban, amikor játékosok csatlakoznak.",
-  
+
   "debug.whitelist-manager-init": "WhitelistManager inicializálva",
   "whitelist.log-enabled": "Engedélylistázás funkció engedélyezve",
   "whitelist.log-disabled": "Engedélylistázás funkció letiltva",
@@ -102,14 +102,14 @@
   "whitelist.log-player-joined": "Játékos csatlakozott: DisplayName='{{displayName}}', UniqueID='{{uniqueId}}', PeerID='{{peerId}}'",
   "whitelist.log-player-kicked": "Játékos kirúgva (nincs az engedélylistán): {{player}}",
   "whitelist.log-kick-executed": "Kirúgás parancs végrehajtva: {{command}}",
-  
+
   "whitelist.error-loading": "Engedélylista betöltési hiba: {{error}}",
   "whitelist.error-saving": "Engedélylista mentési hiba: {{error}}",
   "whitelist.error-file-watcher": "Fájlfigyelő beállítási hiba: {{error}}",
   "whitelist.error-reload": "Engedélylista újratöltési hiba: {{error}}",
   "whitelist.error-checking": "Engedélylista ellenőrzési hiba: {{error}}",
   "whitelist.error-kick": "Játékos kirúgási hiba: {{error}}",
-  
+
   "config.about.header": "Névjegy",
   "config.about.repository": "Forráskód: github.com/kapuic/smapi-multiplayer-helper",
   "config.about.copyright": "© 2025 Ka Pui Cheung. MIT licenc alatt licencelésre került."

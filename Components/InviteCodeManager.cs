@@ -1,11 +1,15 @@
-using System;
-using System.Reflection;
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
-using StardewValley;
+// <copyright file="InviteCodeManager.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MultiplayerHelper.Components
 {
+    using System;
+    using System.Reflection;
+    using StardewModdingAPI;
+    using StardewModdingAPI.Events;
+    using StardewValley;
+
     /// <summary>
     /// Manages automatic invite code detection and clipboard copying functionality.
     /// </summary>
@@ -28,12 +32,14 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Initialize()
         {
-            if (!config.InviteCodeEnabled)
+            if (!this.config.InviteCodeEnabled)
+            {
                 return;
-                
-            helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
-            helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
-            monitor.Log(helper.Translation.Get("debug.invite-manager-init"), config.LogLevel);
+            }
+
+            this.helper.Events.GameLoop.UpdateTicked += this.OnUpdateTicked;
+            this.helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
+            this.monitor.Log(this.helper.Translation.Get("debug.invite-manager-init"), this.config.LogLevel);
         }
 
         /// <summary>
@@ -41,14 +47,14 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Dispose()
         {
-            helper.Events.GameLoop.UpdateTicked -= OnUpdateTicked;
-            helper.Events.GameLoop.SaveLoaded -= OnSaveLoaded;
+            this.helper.Events.GameLoop.UpdateTicked -= this.OnUpdateTicked;
+            this.helper.Events.GameLoop.SaveLoaded -= this.OnSaveLoaded;
         }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
-            hasHostedSession = false;
-            monitor.Log(helper.Translation.Get("debug.save-loaded-invite", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), config.LogLevel);
+            this.hasHostedSession = false;
+            this.monitor.Log(this.helper.Translation.Get("debug.save-loaded-invite", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), this.config.LogLevel);
         }
 
         private void OnUpdateTicked(object sender, UpdateTickedEventArgs e)
@@ -58,10 +64,10 @@ namespace MultiplayerHelper.Components
             {
                 if (Context.IsWorldReady && Context.IsMainPlayer)
                 {
-                    if (Game1.server != null && !hasHostedSession)
+                    if (Game1.server != null && !this.hasHostedSession)
                     {
-                        monitor.Log(helper.Translation.Get("invite.log-detecting"), LogLevel.Debug);
-                        CheckForInviteCode();
+                        this.monitor.Log(this.helper.Translation.Get("invite.log-detecting"), LogLevel.Debug);
+                        this.CheckForInviteCode();
                     }
                 }
             }
@@ -71,21 +77,21 @@ namespace MultiplayerHelper.Components
         {
             try
             {
-                monitor.Log(helper.Translation.Get("invite.log-detecting"), LogLevel.Debug);
+                this.monitor.Log(this.helper.Translation.Get("invite.log-detecting"), LogLevel.Debug);
 
                 string inviteCode = null;
 
                 if (Game1.server != null)
                 {
                     var serverType = Game1.server.GetType();
-                    monitor.Log($"Server type: {serverType.FullName}", LogLevel.Trace);
+                    this.monitor.Log($"Server type: {serverType.FullName}", LogLevel.Trace);
 
                     // Try method approach
                     var getInviteCodeMethod = serverType.GetMethod("getInviteCode");
                     if (getInviteCodeMethod != null)
                     {
                         inviteCode = getInviteCodeMethod.Invoke(Game1.server, null) as string;
-                        monitor.Log(helper.Translation.Get("invite.log-found", new { code = inviteCode }), LogLevel.Debug);
+                        this.monitor.Log(this.helper.Translation.Get("invite.log-found", new { code = inviteCode }), LogLevel.Debug);
                     }
                     else
                     {
@@ -95,7 +101,7 @@ namespace MultiplayerHelper.Components
                         {
                             if (method.Name.ToLower().Contains("invite") || method.Name.ToLower().Contains("code"))
                             {
-                                monitor.Log($"Found method: {method.Name}", LogLevel.Trace);
+                                this.monitor.Log($"Found method: {method.Name}", LogLevel.Trace);
                             }
                         }
                     }
@@ -103,23 +109,24 @@ namespace MultiplayerHelper.Components
 
                 if (!string.IsNullOrWhiteSpace(inviteCode))
                 {
-                    CopyToClipboard(inviteCode);
-                    hasHostedSession = true;
+                    this.CopyToClipboard(inviteCode);
+                    this.hasHostedSession = true;
 
-                    if (config.ShowHudNotifications)
+                    if (this.config.ShowHudNotifications)
                     {
-                        Game1.addHUDMessage(new HUDMessage(helper.Translation.Get("invite.hud-copied", new { code = inviteCode }), HUDMessage.achievement_type));
+                        Game1.addHUDMessage(new HUDMessage(this.helper.Translation.Get("invite.hud-copied", new { code = inviteCode }), HUDMessage.achievement_type));
                     }
-                    monitor.Log(helper.Translation.Get("invite.log-copied", new { code = inviteCode }), config.LogLevel);
+
+                    this.monitor.Log(this.helper.Translation.Get("invite.log-copied", new { code = inviteCode }), this.config.LogLevel);
                 }
                 else
                 {
-                    monitor.Log(helper.Translation.Get("invite.log-unavailable"), config.LogLevel);
+                    this.monitor.Log(this.helper.Translation.Get("invite.log-unavailable"), this.config.LogLevel);
                 }
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("invite.error-detection", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("invite.error-detection", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -132,12 +139,12 @@ namespace MultiplayerHelper.Components
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("invite.error-clipboard", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("invite.error-clipboard", new { error = ex.Message }), LogLevel.Error);
 
                 // Fallback: Show manual copy message if enabled
-                if (config.ShowManualCopyMessage)
+                if (this.config.ShowManualCopyMessage)
                 {
-                    monitor.Log(helper.Translation.Get("invite.hud-manual", new { code = text }), LogLevel.Alert);
+                    this.monitor.Log(this.helper.Translation.Get("invite.hud-manual", new { code = text }), LogLevel.Alert);
                 }
             }
         }

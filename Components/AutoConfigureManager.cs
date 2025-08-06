@@ -1,10 +1,14 @@
-using System;
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
-using StardewValley;
+// <copyright file="AutoConfigureManager.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MultiplayerHelper.Components
 {
+    using System;
+    using StardewModdingAPI;
+    using StardewModdingAPI.Events;
+    using StardewValley;
+
     /// <summary>
     /// Manages automatic map configuration functionality when the host joins multiplayer.
     /// </summary>
@@ -27,13 +31,15 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Initialize()
         {
-            if (!config.AutoConfigureEnabled)
+            if (!this.config.AutoConfigureEnabled)
+            {
                 return;
-                
-            helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
-            helper.Events.Player.Warped += OnPlayerWarped;
-            
-            monitor.Log(helper.Translation.Get("debug.configure-manager-init"), config.LogLevel);
+            }
+
+            this.helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
+            this.helper.Events.Player.Warped += this.OnPlayerWarped;
+
+            this.monitor.Log(this.helper.Translation.Get("debug.configure-manager-init"), this.config.LogLevel);
         }
 
         /// <summary>
@@ -41,38 +47,39 @@ namespace MultiplayerHelper.Components
         /// </summary>
         public void Dispose()
         {
-            helper.Events.GameLoop.SaveLoaded -= OnSaveLoaded;
-            helper.Events.Player.Warped -= OnPlayerWarped;
+            this.helper.Events.GameLoop.SaveLoaded -= this.OnSaveLoaded;
+            this.helper.Events.Player.Warped -= this.OnPlayerWarped;
         }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
-            hasAutoConfigured = false;
-            monitor.Log(helper.Translation.Get("debug.save-loaded-configure", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), config.LogLevel);
+            this.hasAutoConfigured = false;
+            this.monitor.Log(this.helper.Translation.Get("debug.save-loaded-configure", new { isMainPlayer = Context.IsMainPlayer, isMultiplayer = Context.IsMultiplayer }), this.config.LogLevel);
 
             // Auto-configure immediately when hosting multiplayer
             if (Context.IsMainPlayer && Context.IsMultiplayer)
             {
-                helper.Events.GameLoop.OneSecondUpdateTicked += OnOneSecondUpdateTickedForConfigure;
+                this.helper.Events.GameLoop.OneSecondUpdateTicked += this.OnOneSecondUpdateTickedForConfigure;
             }
         }
 
         private void OnPlayerWarped(object sender, WarpedEventArgs e)
         {
-            if (Context.IsMainPlayer && Context.IsMultiplayer && !hasAutoConfigured && e.IsLocalPlayer)
+            if (Context.IsMainPlayer && Context.IsMultiplayer && !this.hasAutoConfigured && e.IsLocalPlayer)
             {
-                AutoConfigureMap();
+                this.AutoConfigureMap();
             }
         }
 
         private void OnOneSecondUpdateTickedForConfigure(object sender, OneSecondUpdateTickedEventArgs e)
         {
             // Auto-configure when the game is ready and we haven't configured yet
-            if (!hasAutoConfigured && Context.IsPlayerFree)
+            if (!this.hasAutoConfigured && Context.IsPlayerFree)
             {
-                AutoConfigureMap();
+                this.AutoConfigureMap();
+
                 // Unsubscribe after configuring
-                helper.Events.GameLoop.OneSecondUpdateTicked -= OnOneSecondUpdateTickedForConfigure;
+                this.helper.Events.GameLoop.OneSecondUpdateTicked -= this.OnOneSecondUpdateTickedForConfigure;
             }
         }
 
@@ -80,26 +87,26 @@ namespace MultiplayerHelper.Components
         {
             try
             {
-                monitor.Log(helper.Translation.Get("configure.log-attempting"), LogLevel.Info);
+                this.monitor.Log(this.helper.Translation.Get("configure.log-attempting"), LogLevel.Info);
 
                 // Execute sleepAnnounceMode command
-                ExecuteCommand("sleepAnnounceMode", GetSleepAnnounceModeString(config.SleepAnnounceModeParameter));
-                
+                this.ExecuteCommand("sleepAnnounceMode", this.GetSleepAnnounceModeString(this.config.SleepAnnounceModeParameter));
+
                 // Execute moveBuildingPermission command
-                ExecuteCommand("moveBuildingPermission", GetMoveBuildingPermissionString(config.MoveBuildingPermissionParameter));
+                this.ExecuteCommand("moveBuildingPermission", this.GetMoveBuildingPermissionString(this.config.MoveBuildingPermissionParameter));
 
                 // Execute unbanAll command if enabled
-                if (config.UnbanAllEnabled)
+                if (this.config.UnbanAllEnabled)
                 {
-                    ExecuteCommand("unbanAll", "");
+                    this.ExecuteCommand("unbanAll", string.Empty);
                 }
 
-                hasAutoConfigured = true;
-                monitor.Log(helper.Translation.Get("configure.log-completed"), LogLevel.Info);
+                this.hasAutoConfigured = true;
+                this.monitor.Log(this.helper.Translation.Get("configure.log-completed"), LogLevel.Info);
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("configure.error-failed", new { error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("configure.error-failed", new { error = ex.Message }), LogLevel.Error);
             }
         }
 
@@ -108,18 +115,18 @@ namespace MultiplayerHelper.Components
             try
             {
                 // Execute console commands using the game's built-in console
-                string fullCommand = string.IsNullOrEmpty(parameter) 
-                    ? command 
+                string fullCommand = string.IsNullOrEmpty(parameter)
+                    ? command
                     : $"{command} {parameter}";
-                
+
                 // Use the game's console system to execute commands
                 Game1.game1.parseDebugInput(fullCommand);
-                
-                monitor.Log(helper.Translation.Get("configure.log-command-executed", new { command = fullCommand }), config.LogLevel);
+
+                this.monitor.Log(this.helper.Translation.Get("configure.log-command-executed", new { command = fullCommand }), this.config.LogLevel);
             }
             catch (Exception ex)
             {
-                monitor.Log(helper.Translation.Get("configure.error-command-failed", new { command, parameter, error = ex.Message }), LogLevel.Error);
+                this.monitor.Log(this.helper.Translation.Get("configure.error-command-failed", new { command, parameter, error = ex.Message }), LogLevel.Error);
             }
         }
 
